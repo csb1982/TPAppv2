@@ -2,21 +2,28 @@
   "ProjectName": "TP V2 Hybrid",
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.TPV2Hybrid",
+  "AppIdentifier": "com.healy.PNApp",
   "DisplayName": "TP V2 Hybrid",
-  "Author": "",
-  "Description": "",
-  "BundleVersion": "1.0",
+  "Author": "CB",
+  "Description": "TP V2 Hybrid",
+  "BundleVersion": "2.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1",
     "2"
   ],
-  "iOSBackgroundMode": [],
+  "iOSBackgroundMode": [
+    "remote-notification"
+  ],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "3.7.0",
+  "FrameworkVersion": "3.8.0",
   "AndroidPermissions": [
-    "android.permission.INTERNET"
+    "android.permission.BROADCAST_PACKAGE_REMOVED",
+    "android.permission.BROADCAST_SMS",
+    "android.permission.INTERNET",
+    "android.permission.RECEIVE_MMS",
+    "android.permission.RECEIVE_SMS",
+    "android.permission.RECEIVE_WAP_PUSH"
   ],
   "DeviceOrientations": [
     "Portrait",
@@ -41,5 +48,10 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@2.5.5",
+    "org.apache.cordova.dialogs",
+    "org.apache.cordova.splashscreen"
   ]
 }

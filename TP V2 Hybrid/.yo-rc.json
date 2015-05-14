@@ -7,7 +7,8 @@
       "./home",
       "./settingsView",
       "./aboutView",
-      "./contactView"
+      "./contactView",
+      "./touchPointView"
     ]
   }
 }

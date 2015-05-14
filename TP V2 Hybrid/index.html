@@ -10,10 +10,14 @@
     <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
     <script src="cordova.js"></script>
 
+    <script src="https://bs-static.cdn.telerik.com/1.3.1/everlive.all.min.js"></script>
+
     <script src="bower_components/kendo-ui-appbuilder-core/js/jquery.min.js"></script>
     <script src="bower_components/kendo-ui-appbuilder-core/js/kendo.mobile.min.js"></script>
-    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="https://bs-static.cdn.telerik.com/1.3.1/everlive.all.min.js"></script>
+
     <script src="app.js"></script>
+    <script src="scripts/home.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
@@ -22,6 +26,7 @@
             <div data-role="navbar">
                 <span data-role="view-title"></span>
                 <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+                <a data-role="button" href="#login" data-align="right" data-bind="click: logout" data-icon="button-login">Logout</a>
             </div>
         </header>
 
@@ -45,7 +50,7 @@
             </div>
         </header>
         <ul id="navigation-container" data-role="listview">
-            <li><a href="home/view.html" data-icon="home">Home</a>
+            <li><a href="home/view.html" data-icon="home">TouchPoint</a>
             </li>
             <li><a href="settingsView/view.html" data-icon="bookmarks">Settings</a>
             </li>
@@ -53,12 +58,15 @@
             </li>
             <li><a href="contactView/view.html" data-icon="info">Contact</a>
             </li>
+            <li><a href="touchPointView/view.html" data-icon="globe">TouchPoint</a>
+            </li>
         </ul>
     </div>
     <script src="home/index.js"></script>
     <script src="settingsView/index.js"></script>
     <script src="aboutView/index.js"></script>
     <script src="contactView/index.js"></script>
+    <script src="touchPointView/index.js"></script>
 </body>
 
 </html>
