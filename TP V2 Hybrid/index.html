@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.all.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
     <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
     <script src="cordova.js"></script>
-
+    <script src="https://bs-static.cdn.telerik.com/1.3.1/everlive.all.min.js"></script>
     <script src="bower_components/kendo-ui-appbuilder-core/js/jquery.min.js"></script>
     <script src="bower_components/kendo-ui-appbuilder-core/js/kendo.mobile.min.js"></script>
-    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="https://bs-static.cdn.telerik.com/1.3.1/everlive.all.min.js"></script>
     <script src="app.js"></script>
+    <script src="scripts/home.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
@@ -22,22 +22,32 @@
             <div data-role="navbar">
                 <span data-role="view-title"></span>
                 <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+                <a data-role="button" href="#login" data-align="right" data-bind="click: logout" data-icon="button-login"></a>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
     </div>
-
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
     </div>
-
+    <!--TouchPoint View-->
+    <div id="touchPoint" data-role="view" data-title="TouchPoint" data-layout="main" data-model="touchPointView">
+        <div class="scroll-wrapper">
+            <!--<iframe src="https://eclipsetouchpoint.co.uk"></iframe>-->
+        </div>
+        <script>
+            //loadSite(1);
+        </script>
+        <script>
+            // jQuery methods go here...
+        </script>
+    </div>
+    <!--TouchPoint View End -->
     <div id="appDrawer" data-role="drawer" data-title="Navigation">
         <header data-role="header">
             <div data-role="navbar">
@@ -45,7 +55,9 @@
             </div>
         </header>
         <ul id="navigation-container" data-role="listview">
-            <li><a href="home/view.html" data-icon="home">Home</a>
+            <li><a href="home/view.html" data-icon="home">Login</a>
+            </li>
+            <li><a href="#touchPoint" data-icon="globe">TouchPoint</a>
             </li>
             <li><a href="settingsView/view.html" data-icon="bookmarks">Settings</a>
             </li>
@@ -53,7 +65,9 @@
             </li>
             <li><a href="contactView/view.html" data-icon="info">Contact</a>
             </li>
-            <li><a href="touchpointView/view.html" data-icon="home">TouchPoint</a>
+            <li><a href="testView/view.html" data-icon="home">Test</a>
+            </li>
+            <li><a href="tpView/view.html" data-icon="home">TouchPoint</a>
             </li>
         </ul>
     </div>
@@ -61,7 +75,8 @@
     <script src="settingsView/index.js"></script>
     <script src="aboutView/index.js"></script>
     <script src="contactView/index.js"></script>
-    <script src="touchpointView/index.js"></script>
+    <script src="testView/index.js"></script>
+    <script src="tpView/index.js"></script>
 </body>
 
 </html>

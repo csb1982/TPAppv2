@@ -1,5 +1,5 @@
 'use strict';
 
-app.touchpointView = kendo.observable({
+app.tpView = kendo.observable({
     onShow: function() {}
 });

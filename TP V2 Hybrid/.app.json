@@ -92,7 +92,23 @@
     },
     {
       "type": "view",
-      "name": "touchpointView",
+      "name": "touchPointView",
+      "title": "TouchPoint",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "globe"
+    },
+    {
+      "type": "view",
+      "name": "testView",
+      "title": "Test",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "tpView",
       "title": "TouchPoint",
       "addToNavigation": true,
       "components": [],
