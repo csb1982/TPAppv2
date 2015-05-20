@@ -16,9 +16,3 @@ app.contactView = kendo.observable({
 
     parent.set('contactViewModel', contactViewModel);
 })(app.contactView);
-
-app.upl=function () {
-        var sLink = "mailto:test@test.com?subject=test";
-        //window.open(sLink, "emailWindow");
-        window.location.href=sLink;
-    };

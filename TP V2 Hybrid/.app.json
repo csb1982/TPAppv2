@@ -92,16 +92,8 @@
     },
     {
       "type": "view",
-      "name": "touchPointView",
+      "name": "touchpointView",
       "title": "TouchPoint",
-      "addToNavigation": true,
-      "components": [],
-      "icon": "globe"
-    },
-    {
-      "type": "view",
-      "name": "testView",
-      "title": "Test",
       "addToNavigation": true,
       "components": [],
       "icon": "home"

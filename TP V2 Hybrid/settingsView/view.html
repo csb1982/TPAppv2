@@ -1,27 +1,27 @@
-<div data-role="view" data-title="Settings" data-layout="main" data-model="app.settingsView" data-show="app.settingsView.onShow" id="tpSettings">
+<div data-role="view" data-title="Settings" data-layout="main" data-model="app.settingsView" data-show="app.settingsView.onShow">
     <div id="settingsViewModel" class="form-view">
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
-                    <label>Url
-                        <input id="url" data-bind="value: settingsViewModel.fields.url" placeholder="http://www.example.com" type="url">
+                    <label>url
+                        <input data-bind="value: settingsViewModel.fields.url" placeholder="http://www.example.com" type="url">
                     </label>
                 </li>
                 <li>
                     <label>Username
-                        <input id="username" data-bind="value: settingsViewModel.fields.username" placeholder="johndoe" type="text">
+                        <input data-bind="value: settingsViewModel.fields.username" placeholder="johndoe" type="text">
                     </label>
                 </li>
                 <li>
                     <label>Password
-                        <input id="password" data-bind="value: settingsViewModel.fields.password" placeholder="******" type="password">
+                        <input data-bind="value: settingsViewModel.fields.password" placeholder="******" type="password">
                     </label>
                 </li>
             </ul>
+
             <div class="button-group">
-                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Save</a>
                 <a data-role="button" data-bind="events: { click: settingsViewModel.cancel }">Cancel</a>
-                <a data-role="button" data-bind="events: { click: settingsViewModel.test }">POST</a>
+                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Save</a>
             </div>
         </form>
     </div>
