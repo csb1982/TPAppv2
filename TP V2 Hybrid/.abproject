@@ -3,9 +3,9 @@
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
   "AppIdentifier": "com.healy.PNApp",
-  "DisplayName": "TP V2 Hybrid",
+  "DisplayName": "TP V3",
   "Author": "CB",
-  "Description": "TP V2 Hybrid",
+  "Description": "TP V3",
   "BundleVersion": "2.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

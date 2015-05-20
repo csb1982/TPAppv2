@@ -3,12 +3,6 @@ function onPushNotificationReceived(e) {
     alert("Basic Test");
 };
 
-
-
-
-
-
-
 function alertDismissed() {
         // do something
     }
@@ -24,8 +18,8 @@ function alertDismissed() {
     };
     */
 
-/* Formatted Works
-var onPushNotificationReceived = function (args) {
+/* Formatted Works */
+var androidNotificationReceived = function (args) {
     var str = JSON.stringify(args);
     var obj = $.parseJSON(str);
 
@@ -37,7 +31,19 @@ var onPushNotificationReceived = function (args) {
     );
 };
 
-*/
+// iOS notification
+var iOSNotificationReceived = function (args) {
+    var str = JSON.stringify(args);
+    var obj = $.parseJSON(str);
+
+    navigator.notification.alert(
+        obj.alert, // message
+        alertDismissed, // callback
+        //obj.payload.title, // title
+        'Done' // buttonName
+    );
+};
+
 
 
 
@@ -58,12 +64,15 @@ var onPushNotificationReceived = function (args) {
 
 
             //Test
+            /*
             var groceryDataSource = new kendo.data.DataSource({
                 type: "everlive",
                 transport: {
                     typeName: "Test"
                 }
             });
+            */
+         
             //Test End            
 
             var devicePushSettings = {
@@ -78,38 +87,61 @@ var onPushNotificationReceived = function (args) {
                 wp8: {
                     channelName: 'EverlivePushChannel'
                 },
-                notificationCallbackIOS: onPushNotificationReceived,
-                notificationCallbackAndroid: onPushNotificationReceived,
+                notificationCallbackIOS: iOSNotificationReceived,
+                notificationCallbackAndroid: androidNotificationReceived,
                 notificationCallbackWP8: onPushNotificationReceived
             };
 
+
+
+
+            everlive.push.register(
+                devicePushSettings,
+                function successCallback(data) {
+                    // This function will be called once the device is successfully registered
+                    alert("successfully registered");
+                },
+                function errorCallback(error) {
+                    // This callback will be called any errors occurred during the device
+                    // registration process
+                    alert("Error");
+                }
+            );
+            /*
             everlive.push.register(devicePushSettings, function () {
                 //Basic alert to notify that app is ready to accept push notifications.
                 alert("Successful registration in Backend Services. You are ready to receive push notifications.");
             }, function (err) {
                 alert("Error: " + err.message);
             });
+            */
             //**********************************************************
         },
     };
 
     var bootstrap = function () {
         $(function () {
-            app.mobileApp = new kendo.mobile.Application(document.body, {
 
+
+            app.mobileApp = new kendo.mobile.Application(document.body, {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
                 skin: 'flat',
                 // the application needs to know which view to load first
                 //initial: 'home/view.html',
                 initial: 'home/view.html',
-                statusBarStyle: 'black-translucent'
+                //statusBarStyle: 'black-translucent'
             });
         });
     };
-// Test Login
-// Test Login End    
-    
+    // Test Login
+
+
+
+
+
+    // Test Login End    
+
     //Test Add
     window.addView = kendo.observable({
         add: function () {
