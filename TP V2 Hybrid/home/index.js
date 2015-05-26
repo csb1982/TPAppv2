@@ -2,20 +2,16 @@
 
 app.home = kendo.observable({
     onShow: function () {
-
+        $("#appDrawer").data("kendoMobileDrawer").hide();
     }
 });
 
-
 (function (parent) {
-
-    //Test
+    //Backend API key
     var apiKey = "fVu2MUaaCYHk9fL7";
     var el = new Everlive(apiKey);
 
-
-
-    var groceryDataSource = new kendo.data.DataSource({
+    var dataSource = new kendo.data.DataSource({
         type: "everlive",
         transport: {
             typeName: "Test"
@@ -30,13 +26,10 @@ app.home = kendo.observable({
         },
 
         submit: function () {
-
             // Set Setting values with whats inputted
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
             var url = settingsViewModel.fields.url;
-
-
 
             if (!username) {
                 navigator.notification.alert("Username is required.");
@@ -48,15 +41,9 @@ app.home = kendo.observable({
             }
             el.Users.login(username, password,
                 function (data) {
-                    //Working code
-                    //window.location.href = "#touchPoint";
-
-
-
-                    //Test area
 
                     //Select data source to transport
-                    var groceryDataSource = new kendo.data.DataSource({
+                    var dataSource = new kendo.data.DataSource({
                         type: "everlive",
                         transport: {
                             typeName: "userSettings"
@@ -64,8 +51,8 @@ app.home = kendo.observable({
                     });
 
                     //Fetch data from Backend
-                    groceryDataSource.fetch(function () {
-                        var datasourcedata = groceryDataSource.data();
+                    dataSource.fetch(function () {
+                        var datasourcedata = dataSource.data();
                         var c = 0;
 
                         // iterate through all data
@@ -73,37 +60,19 @@ app.home = kendo.observable({
                             c++;
                         }
 
-
-
-                        //var result = datasourcedata[0].url;
-                        //alert(result);
+                        //If data send to tp view
                         if (c > 0) {
+                            // Call the instance of kendo.mobile.Application that was created in app.js bootstrap.
+                            app.mobileApp.navigate("tpView/view.html");
 
-/*
-                            var con = result.indexOf("https://eclipsetouchpoint.co.uk");
-                            if (result.indexOf("https://eclipsetouchpoint.co.uk") >= 0) {
-                                //Check if an Eclipse address
-                                var result = datasourcedata[0].url;
-                            }
-                            */
-                            app.mobileApp.navigate("testView/view.html");
+
                         } else {
                             // Call the instance of kendo.mobile.Application that was created in app.js bootstrap.                 
                             app.mobileApp.navigate("settingsView/view.html");
                         }
 
                     });
-
-
-                    //Test area end
-
-
-                    //var app = new window.kendo.mobile.Application();
-                    //app.navigate( 'touchPointView/view.html' );
-
-
-                    groceryDataSource.read();
-                    navigator.notification.alert("Logged In");
+                    dataSource.read();
                 },
                 function () {
                     navigator.notification.alert("Unfortunately we could not find your account.");

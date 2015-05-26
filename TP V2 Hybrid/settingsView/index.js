@@ -10,7 +10,7 @@ app.settingsView = kendo.observable({
     var el = new Everlive(apiKey);
 
     //Select data source to transport
-    var groceryDataSource = new kendo.data.DataSource({
+    var dataSource = new kendo.data.DataSource({
         type: "everlive",
         transport: {
             typeName: "userSettings"
@@ -46,8 +46,8 @@ app.settingsView = kendo.observable({
             }
 
             //Fetch data from Backend
-            groceryDataSource.fetch(function () {
-                var datasourcedata = groceryDataSource.data();
+            dataSource.fetch(function () {
+                var datasourcedata = dataSource.data();
                 var c = 0;
 
                 // iterate through all data
@@ -57,28 +57,28 @@ app.settingsView = kendo.observable({
 
                 //If data exists, update data
                 if (c > 0) {
-                    var item1 = groceryDataSource.data()[0];
+                    var item1 = dataSource.data()[0];
                     item1.set('username', username);
 
-                    var item2 = groceryDataSource.data()[0];
+                    var item2 = dataSource.data()[0];
                     item2.set('password', password);
 
-                    var item3 = groceryDataSource.data()[0];
+                    var item3 = dataSource.data()[0];
                     item3.set('url', url);
 
                     //Sync data source
-                    groceryDataSource.one("sync", this.close);
-                    groceryDataSource.sync();
+                    dataSource.one("sync", this.close);
+                    dataSource.sync();
                 }
                 //Else add new data
                 else {
-                    groceryDataSource.add({
+                    dataSource.add({
                         username: username,
                         password: password,
                         url: url
                     });
-                    groceryDataSource.one("sync", this.close);
-                    groceryDataSource.sync();
+                    dataSource.one("sync", this.close);
+                    dataSource.sync();
                 }
             });
         },

@@ -44,9 +44,6 @@ var iOSNotificationReceived = function (args) {
     );
 };
 
-
-
-
 (function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
@@ -61,19 +58,6 @@ var iOSNotificationReceived = function (args) {
                 apiKey: 'fVu2MUaaCYHk9fL7',
                 scheme: 'http' // switch this to 'https' if you'd like to use TLS/SSL encryption and if it is included in your subscription tier
             });
-
-
-            //Test
-            /*
-            var groceryDataSource = new kendo.data.DataSource({
-                type: "everlive",
-                transport: {
-                    typeName: "Test"
-                }
-            });
-            */
-         
-            //Test End            
 
             var devicePushSettings = {
                 iOS: {
@@ -91,9 +75,6 @@ var iOSNotificationReceived = function (args) {
                 notificationCallbackAndroid: androidNotificationReceived,
                 notificationCallbackWP8: onPushNotificationReceived
             };
-
-
-
 
             everlive.push.register(
                 devicePushSettings,
@@ -122,7 +103,6 @@ var iOSNotificationReceived = function (args) {
     var bootstrap = function () {
         $(function () {
 
-
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
@@ -133,35 +113,7 @@ var iOSNotificationReceived = function (args) {
                 //statusBarStyle: 'black-translucent'
             });
         });
-    };
-    // Test Login
-
-
-
-
-
-    // Test Login End    
-
-    //Test Add
-    window.addView = kendo.observable({
-        add: function () {
-            if (!this.grocery) {
-                navigator.notification.alert("Please provide a grocery.");
-                return;
-            }
-
-            groceryDataSource.add({
-                Name: this.grocery
-            });
-            groceryDataSource.one("sync", this.close);
-            groceryDataSource.sync();
-        },
-        close: function () {
-            $("#add").data("kendoMobileModalView").close();
-            this.grocery = "";
-        }
-    });
-    //Test End    
+    }; 
 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
