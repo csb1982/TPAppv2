@@ -69,6 +69,7 @@ app.settingsView = kendo.observable({
                     //Sync data source
                     dataSource.one("sync", this.close);
                     dataSource.sync();
+                    navigator.notification.alert("Settings Saved");
                 }
                 //Else add new data
                 else {
@@ -79,15 +80,9 @@ app.settingsView = kendo.observable({
                     });
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                }
+                    navigator.notification.alert("Settings Updated");
+                }                
             });
-        },
-        //****************** On test button click ******************        
-        test: function () {
-            alert("Pressed!!");
-            
-
-
         },
         //****************** On cancel button click ******************        
         cancel: function () {
