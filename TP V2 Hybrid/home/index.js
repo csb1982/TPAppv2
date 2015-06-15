@@ -8,13 +8,13 @@ app.home = kendo.observable({
 
 (function (parent) {
     //Backend API key
-    var apiKey = "fVu2MUaaCYHk9fL7";
+    var apiKey = "vv4BtGwI2jSFFWd6"; // Telerik API key
     var el = new Everlive(apiKey);
 
     var dataSource = new kendo.data.DataSource({
         type: "everlive",
         transport: {
-            typeName: "Test"
+            typeName: "userSettings"
         }
     });
 
@@ -41,7 +41,6 @@ app.home = kendo.observable({
             }
             el.Users.login(username, password,
                 function (data) {
-
                     //Select data source to transport
                     var dataSource = new kendo.data.DataSource({
                         type: "everlive",
@@ -64,6 +63,29 @@ app.home = kendo.observable({
                         if (c > 0) {
                             // Call the instance of kendo.mobile.Application that was created in app.js bootstrap.
                             app.mobileApp.navigate("tpView/view.html");
+                            //TEST
+                            /*
+                            */
+                            //alert("In Test Settings");
+                            $.ajax({
+                                    url: "https://eclipsetouchpoint.co.uk/eclipse",
+                                    type: "POST",
+                                    data: {
+                                        userName: "maxine",
+                                        password: "password",
+                                        siteID: "eclipse"
+                                    }
+                                })
+                                .done(function (data) {
+                                    //use data from server
+                                    //alert("Done ");
+                                })
+                                .fail(function () {
+                                    //alert("Error ");
+                                });
+                            /*
+                                */
+                            //TEST END
 
 
                         } else {

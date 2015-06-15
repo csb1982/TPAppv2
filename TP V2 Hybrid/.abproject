@@ -2,10 +2,10 @@
   "ProjectName": "TP V2 Hybrid",
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
-  "AppIdentifier": "com.healy.PNApp",
-  "DisplayName": "TP V3",
+  "AppIdentifier": "com.healy.TelerikApp",
+  "DisplayName": "TP V4",
   "Author": "CB",
-  "Description": "TP V3",
+  "Description": "TP V4",
   "BundleVersion": "2.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
