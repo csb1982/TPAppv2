@@ -25,8 +25,7 @@ app.home = kendo.observable({
             url: '',
         },
 
-        submit: function () {
-            alert("here");
+        submit: function () {            
             // Set Setting values with whats inputted
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;

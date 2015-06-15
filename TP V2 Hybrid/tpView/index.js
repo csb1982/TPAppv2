@@ -1,8 +1,7 @@
 'use strict';
 
 app.tpView = kendo.observable({
-    onShow: function () {
-        alert("Hi");
+    onShow: function () {        
         // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
