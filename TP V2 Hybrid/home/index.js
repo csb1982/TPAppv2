@@ -26,6 +26,7 @@ app.home = kendo.observable({
         },
 
         submit: function () {
+            alert("here");
             // Set Setting values with whats inputted
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
@@ -61,19 +62,23 @@ app.home = kendo.observable({
 
                         //If data send to tp view
                         if (c > 0) {
-                            // Call the instance of kendo.mobile.Application that was created in app.js bootstrap.
+                            // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
+
+							// Set values from backend service
+                            var username = datasourcedata[0].username;
+                            var password = datasourcedata[0].password;
+                            var url = datasourcedata[0].url;
+                            var page = url.substring(url.lastIndexOf('/') + 1);
+
                             app.mobileApp.navigate("tpView/view.html");
-                            //TEST
-                            /*
-                            */
-                            //alert("In Test Settings");
+
                             $.ajax({
-                                    url: "https://eclipsetouchpoint.co.uk/eclipse",
+                                    url: url,
                                     type: "POST",
                                     data: {
-                                        userName: "maxine",
-                                        password: "password",
-                                        siteID: "eclipse"
+                                        userName: username,
+                                        password: password,
+                                        siteID: page
                                     }
                                 })
                                 .done(function (data) {
@@ -83,9 +88,6 @@ app.home = kendo.observable({
                                 .fail(function () {
                                     //alert("Error ");
                                 });
-                            /*
-                                */
-                            //TEST END
 
 
                         } else {

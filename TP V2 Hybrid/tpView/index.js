@@ -2,6 +2,7 @@
 
 app.tpView = kendo.observable({
     onShow: function () {
+        alert("Hi");
         // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
@@ -43,13 +44,6 @@ app.tpView = kendo.observable({
 
                     document.getElementById('noAdressHeader').style.display = "none";
                     submitform();
-
-                    //document.getElementById('tpFrame').src = result;
-
-                    //document.getElementsByTagName('test-submit')[0].click();
-                    //$('#my-form').submit();
-
-
 
                 } else {
                     navigator.notification.alert("Url does not match site address");
