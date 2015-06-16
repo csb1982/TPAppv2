@@ -60,6 +60,13 @@ var iOSNotificationReceived = function (args) {
                 apiKey: 'vv4BtGwI2jSFFWd6', // Telerik API key
                 scheme: 'http' // switch this to 'https' if you'd like to use TLS/SSL encryption and if it is included in your subscription tier
             });
+            
+            
+            
+
+            
+            
+            
 
             var devicePushSettings = {
                 iOS: {
@@ -82,8 +89,7 @@ var iOSNotificationReceived = function (args) {
                 devicePushSettings,
                 function successCallback(data) {
                     // This function will be called once the device is successfully registered
-                    //alert("successfully registered");
-                    navigator.notification.alert("Your device has been successfully registered for push notifications");
+                    //navigator.notification.alert("Your device has been successfully registered for push notifications");
                 },
                 function errorCallback(error) {
                     // This callback will be called any errors occurred during the device
@@ -92,10 +98,7 @@ var iOSNotificationReceived = function (args) {
                     navigator.notification.alert("Unfortunately we could register your device for push notifications");
                 }
             );
-            
-            /*
-            */ //End of test
-            
+                       
             
             /*
             everlive.push.register(devicePushSettings, function () {
@@ -124,6 +127,11 @@ var iOSNotificationReceived = function (args) {
         });
     };
 
+    
+
+    
+    
+    
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
         document.addEventListener('deviceready', function () {

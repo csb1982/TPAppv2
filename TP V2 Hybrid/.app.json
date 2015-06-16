@@ -113,6 +113,22 @@
       "addToNavigation": true,
       "components": [],
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "registerView",
+      "title": "Register",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "resetView",
+      "title": "Rest",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "home"
     }
   ],
   "view": "home",

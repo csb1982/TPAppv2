@@ -10,7 +10,9 @@
       "./contactView",
       "./touchPointView",
       "./testView",
-      "./tpView"
+      "./tpView",
+      "./registerView",
+      "./resetView"
     ]
   }
 }

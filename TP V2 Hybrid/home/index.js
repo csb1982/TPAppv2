@@ -16,8 +16,8 @@ app.home = kendo.observable({
         transport: {
             typeName: "userSettings"
         }
-    });
-
+    });  
+    
     var settingsViewModel = kendo.observable({
         fields: {
             password: '',
@@ -102,8 +102,14 @@ app.home = kendo.observable({
                 });
 
         },
-        cancel: function () {}
+        register: function () {
+            app.mobileApp.navigate("registerView/view.html");
+        }
     });
+    
+
+    
+    
 
     parent.set('settingsViewModel', settingsViewModel);
 })(app.home);

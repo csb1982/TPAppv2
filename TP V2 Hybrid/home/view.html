@@ -14,9 +14,10 @@
                 </li>
             </ul>
             <div class="button-group">
-                <a data-role="button" data-bind="events: { click: settingsViewModel.cancel }">Cancel</a>
-                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Login</a>
+                <a data-role="button" data-bind="events: { click: settingsViewModel.register }">Register</a>
+                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Login</a>              
             </div>
         </form>
-    </div>
+         <a data-bind="events: { click: settingsViewModel.submit }">Forgot password?</a>
+    </div>  
 </div>
