@@ -104,6 +104,10 @@ app.home = kendo.observable({
         },
         register: function () {
             app.mobileApp.navigate("registerView/view.html");
+        },
+        
+        reset: function () {
+            app.mobileApp.navigate("resetView/view.html");
         }
     });
     

@@ -4,7 +4,6 @@ app.registerView = kendo.observable({
     onShow: function() {}
 });
 (function (parent) {
-
     //Backend api key
     var apiKey = "vv4BtGwI2jSFFWd6";
     var el = new Everlive(apiKey);
@@ -25,7 +24,7 @@ app.registerView = kendo.observable({
         },
         //****************** On save button click ******************
         submit: function () {
-                        // Set Setting values with whats inputted
+            // Set Setting values with whats inputted
             var username = registerViewModel.fields.username;
             var password = registerViewModel.fields.password;
             var url = registerViewModel.fields.url;
@@ -44,13 +43,12 @@ app.registerView = kendo.observable({
                 function () {
                     navigator.notification.alert("Your account was successfully created.");
                     //window.location.href = "#login";
+                	app.mobileApp.navigate("home/view.html");
                 },
                 function () {
                     navigator.notification.alert("Unfortunately we were unable to create your account.");
                 });
-        }
-        //****************** On cancel button click ******************        
-
+        }     
     });
 
     parent.set('registerViewModel', registerViewModel);
