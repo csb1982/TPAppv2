@@ -1,7 +1,7 @@
 'use strict';
 
 app.tpView = kendo.observable({
-    onShow: function () {        
+    onShow: function () {
         // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
@@ -40,6 +40,9 @@ app.tpView = kendo.observable({
 
                     var elem3 = document.getElementById("site");
                     elem3.value = page;
+
+                    // Enable when releasing for live 
+                    //document.getElementById("tpForm").action = url;
 
                     document.getElementById('noAdressHeader').style.display = "none";
                     submitform();
