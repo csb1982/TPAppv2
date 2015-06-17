@@ -14,6 +14,5 @@ app.aboutView = kendo.observable({
         }
     });
  
-    
     parent.set('aboutViewModel', aboutViewModel);
 })(app.aboutView);

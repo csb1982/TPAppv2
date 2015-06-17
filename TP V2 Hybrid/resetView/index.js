@@ -37,7 +37,6 @@ app.resetView = kendo.observable({
                 }),
                 success: function () {
                     navigator.notification.alert("Your password was successfully reset. Please check your email for instructions on choosing a new password.");
-                    //window.location.href = "#login";
                     app.mobileApp.navigate("home/view.html");
                 },
                 error: function () {

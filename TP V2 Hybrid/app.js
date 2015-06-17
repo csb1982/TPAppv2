@@ -18,7 +18,8 @@ function alertDismissed() {
     };
     */
 
-/* Formatted Works */
+/* Formatted notifications */
+// Android notification
 var androidNotificationReceived = function (args) {
     var str = JSON.stringify(args);
     var obj = $.parseJSON(str);
@@ -60,14 +61,7 @@ var iOSNotificationReceived = function (args) {
                 apiKey: 'vv4BtGwI2jSFFWd6', // Telerik API key
                 scheme: 'http' // switch this to 'https' if you'd like to use TLS/SSL encryption and if it is included in your subscription tier
             });
-            
-            
-            
-
-            
-            
-            
-
+                                               
             var devicePushSettings = {
                 iOS: {
                     badge: 'true',
@@ -94,21 +88,9 @@ var iOSNotificationReceived = function (args) {
                 function errorCallback(error) {
                     // This callback will be called any errors occurred during the device
                     // registration process
-                    //alert("Error");
                     navigator.notification.alert("Unfortunately we could register your device for push notifications");
                 }
             );
-                       
-            
-            /*
-            everlive.push.register(devicePushSettings, function () {
-                //Basic alert to notify that app is ready to accept push notifications.
-                alert("Successful registration in Backend Services. You are ready to receive push notifications.");
-            }, function (err) {
-                alert("Error: " + err.message);
-            });
-            */
-            //**********************************************************
         },
     };
 
@@ -119,19 +101,13 @@ var iOSNotificationReceived = function (args) {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
                 skin: 'flat',
-                // the application needs to know which view to load first
-                //initial: 'home/view.html',
+                // the application needs to know which view to load first                
                 initial: 'home/view.html',
                 //statusBarStyle: 'black-translucent'
             });
         });
     };
-
-    
-
-    
-    
-    
+ 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
         document.addEventListener('deviceready', function () {

@@ -5,7 +5,7 @@ app.tpView = kendo.observable({
         // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
-        var groceryDataSource = new kendo.data.DataSource({
+        var DataSource = new kendo.data.DataSource({
             type: "everlive",
             transport: {
                 typeName: "userSettings"
@@ -13,8 +13,8 @@ app.tpView = kendo.observable({
         });
 
         //Fetch data from Backend
-        groceryDataSource.fetch(function () {
-            var datasourcedata = groceryDataSource.data();
+        DataSource.fetch(function () {
+            var datasourcedata = DataSource.data();
             var c = 0;
 
             // iterate through all data

@@ -5,10 +5,6 @@ app.settingsView = kendo.observable({
 });
 (function (parent) {
 
-    //Backend api key
-    var apiKey = "fVu2MUaaCYHk9fL7";
-    var el = new Everlive(apiKey);
-
     //Select data source to transport
     var dataSource = new kendo.data.DataSource({
         type: "everlive",
@@ -69,7 +65,7 @@ app.settingsView = kendo.observable({
                     //Sync data source
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings Saved");
+                    navigator.notification.alert("Settings have been saved");
                 }
                 //Else add new data
                 else {
@@ -80,7 +76,7 @@ app.settingsView = kendo.observable({
                     });
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings Updated");
+                    navigator.notification.alert("Settings have been updated");
                 }                
             });
         },

@@ -109,11 +109,7 @@ app.home = kendo.observable({
         reset: function () {
             app.mobileApp.navigate("resetView/view.html");
         }
-    });
-    
-
-    
-    
+    });   
 
     parent.set('settingsViewModel', settingsViewModel);
 })(app.home);

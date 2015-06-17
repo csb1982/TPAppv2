@@ -42,7 +42,6 @@ app.registerView = kendo.observable({
                 },
                 function () {
                     navigator.notification.alert("Your account was successfully created.");
-                    //window.location.href = "#login";
                 	app.mobileApp.navigate("home/view.html");
                 },
                 function () {
