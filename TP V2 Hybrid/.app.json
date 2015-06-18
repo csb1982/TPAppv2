@@ -129,6 +129,14 @@
       "addToNavigation": true,
       "components": [],
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "wizardView",
+      "title": "Welcome",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "home"
     }
   ],
   "view": "home",

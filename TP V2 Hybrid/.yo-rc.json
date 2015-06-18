@@ -12,7 +12,8 @@
       "./testView",
       "./tpView",
       "./registerView",
-      "./resetView"
+      "./resetView",
+      "./wizardView"
     ]
   }
 }
