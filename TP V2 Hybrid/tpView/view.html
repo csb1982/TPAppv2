@@ -1,25 +1,2 @@
 <div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow">
-    <div class="scroll-wrapper">
-        <h3 id="noAdressHeader">No Site Address, please go to Settings.</h3>
-        <!--<iframe id="tpFrame" src=""></iframe>-->
-    </div>
-    <div>
-        
-        <div id="container">
-            <!-- Remove replace action of form to "" when releasing for live -->
-            <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post">
-                <input id="site" type="text" name="siteID" value="" />
-                <input id="username" type="text" name="userName" value="" />
-                <input id="password" type="text" name="password" value="" />
-            </form>
-            
-            <script type="text/javascript">
-                function submitform() {
-                    document.formvar.submit();
-                }
-            </script>
-
-        </div>
-		
-    </div>
 </div>

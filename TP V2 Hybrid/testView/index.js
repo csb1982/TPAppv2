@@ -1,5 +1,5 @@
 'use strict';
 
-app.home = kendo.observable({
+app.testView = kendo.observable({
     onShow: function() {}
 });
