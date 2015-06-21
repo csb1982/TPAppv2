@@ -30,7 +30,6 @@ app.home = kendo.observable({
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
             var url = settingsViewModel.fields.url;
-
             if (!username) {
                 navigator.notification.alert("Username is required.");
                 return;
@@ -68,7 +67,9 @@ app.home = kendo.observable({
                             var password = datasourcedata[0].password;
                             var url = datasourcedata[0].url;
                             var page = url.substring(url.lastIndexOf('/') + 1);
-
+                            
+                            alert("Values " + username + password + url + page);
+/*
                             app.mobileApp.navigate("tpView/view.html");
 
                             $.ajax({
@@ -87,6 +88,7 @@ app.home = kendo.observable({
                                 .fail(function () {
                                     //alert("Error ");
                                 });
+*/
 
 
                         } else {

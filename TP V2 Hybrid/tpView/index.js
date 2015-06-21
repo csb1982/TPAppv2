@@ -2,6 +2,7 @@
 
 app.tpView = kendo.observable({
     onShow: function () {
+//submitform();
         // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
@@ -13,6 +14,7 @@ app.tpView = kendo.observable({
         });
 
         //Fetch data from Backend
+        
         DataSource.fetch(function () {
             var datasourcedata = DataSource.data();
             var c = 0;
@@ -58,5 +60,6 @@ app.tpView = kendo.observable({
             }
 
         });
+        
     }
 });

@@ -1,12 +1,24 @@
 <div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow">
     <div class="scroll-wrapper">
-        <h3 id="noAdressHeader">No Site Address, please go to Settings.</h3>
-        <!--<iframe id="tpFrame" src=""></iframe>-->
+        <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post" target="output_frame">
+            <!-- input elements here -->
+            <input id="site" type="text" name="siteID" value="" />
+            <input id="username" type="text" name="userName" value="" />
+            <input id="password" type="text" name="password" value="" />
+        </form>
+        <iframe name="output_frame" src="" id="output_frame">
+        </iframe>
+        <script type="text/javascript">
+            function submitform() {
+                document.formvar.submit();
+            }
+        </script>
     </div>
     <div>
-        
+        <!-- Remove replace action of form to "" when releasing for live -->
+        <!--
         <div id="container">
-            <!-- Remove replace action of form to "" when releasing for live -->
+            
             <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post">
                 <input id="site" type="text" name="siteID" value="" />
                 <input id="username" type="text" name="userName" value="" />
@@ -20,6 +32,6 @@
             </script>
 
         </div>
-		
+		-->
     </div>
 </div>

@@ -5,6 +5,10 @@ app.settingsView = kendo.observable({
 });
 (function (parent) {
 
+    //Backend api key
+    var apiKey = "vv4BtGwI2jSFFWd6";
+    var el = new Everlive(apiKey);
+
     //Select data source to transport
     var dataSource = new kendo.data.DataSource({
         type: "everlive",
@@ -22,6 +26,7 @@ app.settingsView = kendo.observable({
         //****************** On save button click ******************
         submit: function () {
 
+            
             // Set Setting values from user input
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
@@ -66,6 +71,7 @@ app.settingsView = kendo.observable({
                     dataSource.one("sync", this.close);
                     dataSource.sync();
                     navigator.notification.alert("Settings have been saved");
+                    app.mobileApp.navigate("tpView/view.html");
                 }
                 //Else add new data
                 else {
@@ -77,8 +83,11 @@ app.settingsView = kendo.observable({
                     dataSource.one("sync", this.close);
                     dataSource.sync();
                     navigator.notification.alert("Settings have been updated");
+                    app.mobileApp.navigate("tpView/view.html");
                 }                
             });
+            
+            
         },
         //****************** On cancel button click ******************        
         cancel: function () {
@@ -86,6 +95,7 @@ app.settingsView = kendo.observable({
             $('#username').val("").change();
             $('#password').val("").change();
             $('#url').val("").change();
+
         },
     });
 

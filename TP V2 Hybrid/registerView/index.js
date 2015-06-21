@@ -29,20 +29,31 @@ app.registerView = kendo.observable({
             var password = registerViewModel.fields.password;
             var url = registerViewModel.fields.url;
             
-            if (!this.username) {
+            if (!username) {
                 navigator.notification.alert("Username is required.");
                 return;
             }
-            if (!this.password) {
+            if (!password) {
                 navigator.notification.alert("Password is required.");
                 return;
             }
-            el.Users.register(this.username, this.password, {
+            el.Users.register(username, password, {
                     Email: this.email
                 },
                 function () {
                     navigator.notification.alert("Your account was successfully created.");
-                	app.mobileApp.navigate("home/view.html");
+                app.mobileApp.navigate("home/view.html");
+               /*
+                //Log user in
+                el.Users.login(username, password,
+                function (data) {
+                    dataSource.read();
+                    app.mobileApp.navigate("settingsView/view.html");
+                },
+                function () {
+                    navigator.notification.alert("Unfortunately we could not find your account.");
+                });
+                	*/
                 },
                 function () {
                     navigator.notification.alert("Unfortunately we were unable to create your account.");

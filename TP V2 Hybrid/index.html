@@ -5,7 +5,10 @@
     <title></title>
     <meta charset="utf-8">
     <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.all.min.css" rel="stylesheet">
+    <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.flat.material-blue.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
+   
+  
     <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
     <script src="cordova.js"></script>
     <script src="https://bs-static.cdn.telerik.com/1.3.1/everlive.all.min.js"></script>
@@ -22,10 +25,8 @@
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
-                <!--
                 <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
                 <a data-role="button" href="#login" data-align="right" data-bind="click: logout" data-icon="button-login"></a>
-				-->
             </div>
         </header>
         <!-- application views will be rendered here -->
@@ -40,7 +41,7 @@
         <!-- application views will be rendered here -->
     </div>
     <!-- Navigation drawer -->
-    <!--
+    
     <div id="appDrawer" data-role="drawer" data-title="Navigation">
         <header data-role="header">
             <div data-role="navbar">
@@ -48,19 +49,15 @@
             </div>
         </header>
         <ul id="navigation-container" data-role="listview">
-            <li><a href="home/view.html" data-icon="home">Login</a>
-            </li>
-            <li><a href="tpView/view.html" data-icon="globe">TouchPoint</a>
-            </li>
-            <li><a href="settingsView/view.html" data-icon="bookmarks">Settings</a>
-            </li>
-            <li><a href="aboutView/view.html" data-icon="info">About</a>
-            </li>
-            <li><a href="contactView/view.html" data-icon="info">Contact</a>
-            </li>
+            <li><a href="home/view.html" data-icon="home">Login</a></li>
+            <li><a href="tpView/view.html" data-icon="globe">TouchPoint</a></li>
+            <li><a href="settingsView/view.html" data-icon="bookmarks">Settings</a></li>
+            <li><a href="aboutView/view.html" data-icon="info">About</a></li>
+            <li><a href="contactView/view.html" data-icon="info">Contact</a></li>
+            <li><a href="wizardView/view.html" data-icon="info">Welcome</a></li>
         </ul>
     </div>
--->
+
     <script src="home/index.js"></script>
     <script src="settingsView/index.js"></script>
     <script src="aboutView/index.js"></script>
