@@ -1,9 +1,14 @@
 'use strict';
 
 app.aboutView = kendo.observable({
-    onShow: function() {}
+    onShow: function() {
+        alert("about");
+        app.mobileApp.navigate("contactView/view.html");
+        
+    }
 });
 (function(parent) {
+    
     var aboutViewModel = kendo.observable({
         openLink: function(url) {
             window.open(url, '_system');

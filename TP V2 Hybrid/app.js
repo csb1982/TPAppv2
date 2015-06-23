@@ -48,15 +48,50 @@ var iOSNotificationReceived = function (args) {
 (function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
+
+    //var location = 'aboutView/view.html';
+
     var app = {
         data: {},
-        onDeviceReady: function () {
+        onDeviceReady: function () {            
             //app.receivedEvent('deviceready');
             navigator.splashscreen.hide();
 
+
+            //test
+            //var variableNameInput = document.getElementById("variableNameInput"),
+            //valueInput = document.getElementById("valueInput");
+
+            //localStorage.setItem("key", "value1");
+            //var value = localStorage.getItem("key");
+
+            /*
+                        if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
+                            //var result = localStorage.getItem("key");
+                            //alert("In result = " + result);
+
+
+                            var username = localStorage.getItem("username");
+                            var password = localStorage.getItem("password");
+                            var url = localStorage.getItem("url");
+                            var page = localStorage.getItem("page");
+
+                            alert("In result = " + username+ " " +password+ " " +url+ " "+page);
+                           // app.mobileApp.navigate("tpView/view.html");
+                            //location = "tpView/view.html";
+                            //location = "home/view.html";
+
+                        }
+            */
+
+            //alert(value);
+
+
+            //test end
+
             //**********************************************************
             /* disable notifications so can test in browser
-            */
+             */
             /*
             var everlive = new Everlive({
                 apiKey: 'vv4BtGwI2jSFFWd6', // Telerik API key
@@ -99,17 +134,27 @@ var iOSNotificationReceived = function (args) {
     var bootstrap = function () {
         $(function () {
 
+            //var test = 'wizardView/view.html';
+            // Check if saved settings
+            /*
+            if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
+                alert("move to tp");
+                //app.mobileApp.navigate("tpView/view.html");
+                
+            }
+            */
+
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
                 skin: 'flat',
                 // the application needs to know which view to load first                
-                initial: 'home/view.html',
+                initial: 'aboutView/view.html',
                 //statusBarStyle: 'black-translucent'
             });
         });
     };
- 
+
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
         document.addEventListener('deviceready', function () {
@@ -136,4 +181,11 @@ var iOSNotificationReceived = function (args) {
             return navigator.connection.type !== 'none';
         }
     };
+
+
+
+
+
+
+
 }());

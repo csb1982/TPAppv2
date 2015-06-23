@@ -137,6 +137,14 @@
       "addToNavigation": true,
       "components": [],
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "touchpointView",
+      "title": "TouchPoint",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "home"
     }
   ],
   "view": "home",

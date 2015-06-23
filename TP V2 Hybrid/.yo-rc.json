@@ -13,7 +13,8 @@
       "./tpView",
       "./registerView",
       "./resetView",
-      "./wizardView"
+      "./wizardView",
+      "./touchpointView"
     ]
   }
 }
