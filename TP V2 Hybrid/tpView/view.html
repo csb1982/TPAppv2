@@ -3,14 +3,13 @@
         <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post" target="output_frame">
             <!-- input elements -->
             <input id="site" type="text" name="siteID" value="" />
-            <input id="username" type="text" name="userName" value="maxine" />
-            <input id="password" type="text" name="password" value="password" />
+            <input id="username" type="text" name="userName" value="" />
+            <input id="password" type="text" name="password" value="" />
         </form>
-        <iframe name="output_frame" src="#">
+        <iframe name="output_frame" src="">
         </iframe>
         <script type="text/javascript">
             function submitform() {
-                alert("in submit");
                 //document.formvar.submit();
                 document.getElementById('tpForm').submit();
             }

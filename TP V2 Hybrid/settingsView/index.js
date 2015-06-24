@@ -25,8 +25,9 @@ app.settingsView = kendo.observable({
         },
         //****************** On save button click ******************
         submit: function () {
+            var saved = 0;
 
-            
+
             // Set Setting values from user input
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
@@ -51,6 +52,7 @@ app.settingsView = kendo.observable({
                 var datasourcedata = dataSource.data();
                 var c = 0;
 
+
                 // iterate through all data
                 for (var i = 0; i < datasourcedata.length; i++) {
                     c++;
@@ -71,6 +73,7 @@ app.settingsView = kendo.observable({
                     dataSource.one("sync", this.close);
                     dataSource.sync();
                     navigator.notification.alert("Settings have been saved");
+                    saved = 1;
                     app.mobileApp.navigate("tpView/view.html");
                 }
                 //Else add new data
@@ -83,11 +86,21 @@ app.settingsView = kendo.observable({
                     dataSource.one("sync", this.close);
                     dataSource.sync();
                     navigator.notification.alert("Settings have been updated");
+                    saved = 1;
                     app.mobileApp.navigate("tpView/view.html");
-                }                
+                }
+
             });
-            
-            
+
+
+            // If haven't saved data, send back to login screen.
+            var interval = setTimeout(function () {
+                if (saved == 0) {
+                    navigator.notification.alert("Unfortunately we could not find your account.");
+                    app.mobileApp.navigate("home/view.html");
+                }
+            }, 5000);
+
         },
         //****************** On cancel button click ******************        
         cancel: function () {

@@ -48,12 +48,17 @@ var iOSNotificationReceived = function (args) {
 (function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
+    
+	//Check for stored user data on device. If data log into TouchPoint  
+    var location = 'wizardView/view.html';
+    if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
 
-    //var location = 'aboutView/view.html';
+        location = 'tpView/view.html';
+    }
 
     var app = {
         data: {},
-        onDeviceReady: function () {            
+        onDeviceReady: function () {
             //app.receivedEvent('deviceready');
             navigator.splashscreen.hide();
 
@@ -133,23 +138,12 @@ var iOSNotificationReceived = function (args) {
 
     var bootstrap = function () {
         $(function () {
-
-            //var test = 'wizardView/view.html';
-            // Check if saved settings
-            /*
-            if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
-                alert("move to tp");
-                //app.mobileApp.navigate("tpView/view.html");
-                
-            }
-            */
-
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
                 skin: 'flat',
                 // the application needs to know which view to load first                
-                initial: 'aboutView/view.html',
+                initial: location,
                 //statusBarStyle: 'black-translucent'
             });
         });
@@ -181,11 +175,4 @@ var iOSNotificationReceived = function (args) {
             return navigator.connection.type !== 'none';
         }
     };
-
-
-
-
-
-
-
 }());
