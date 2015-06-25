@@ -2,6 +2,10 @@
 
 app.tpView = kendo.observable({
     onShow: function () {
+        
+        
+        
+        
         // Check for stored user data on device
         if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
             var username = localStorage.getItem("username");
@@ -13,9 +17,9 @@ app.tpView = kendo.observable({
             document.getElementById("site").value = page;
 
             submitform();
-        }
-
-        // Hide form
+        } else {
+            
+                    // Hide form
         document.getElementById('tpForm').style.display = "none";
         //Select data source to transport
         var DataSource = new kendo.data.DataSource({
@@ -68,7 +72,11 @@ app.tpView = kendo.observable({
 				app.mobileApp.navigate("wizardView/view.html");
             }
 
-        });
+        }); 
+            
+        }
+
+
 
     }
 });

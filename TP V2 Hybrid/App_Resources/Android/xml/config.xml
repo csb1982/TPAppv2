@@ -2,6 +2,7 @@
 <cordova>
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
     <access origin="mailto:*" launch-external="yes"/>
+     <access origin="*"/>
     
     
     <content src="index.html" />

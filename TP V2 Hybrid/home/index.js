@@ -67,9 +67,9 @@ app.home = kendo.observable({
                             var password = datasourcedata[0].password;
                             var url = datasourcedata[0].url;
                             var page = url.substring(url.lastIndexOf('/') + 1);
-                            
-                            alert("Values " + username + password + url + page);
+
                             app.mobileApp.navigate("tpView/view.html");
+
 /*
 
                             $.ajax({

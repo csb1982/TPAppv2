@@ -3,9 +3,9 @@
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
   "AppIdentifier": "com.healy.TelerikApp",
-  "DisplayName": "TP V4",
+  "DisplayName": "TP V5",
   "Author": "CB",
-  "Description": "TP V4",
+  "Description": "TP V5",
   "BundleVersion": "2.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -29,7 +29,7 @@
     "Portrait",
     "Landscape"
   ],
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
   "Framework": "Cordova",
   "WP8TileTitle": "",
