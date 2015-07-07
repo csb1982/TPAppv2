@@ -3,28 +3,33 @@
     
     <div id="settingsViewModel" class="form-view">
 
-        <form>
-            <ul class="form-content" data-role="listview" data-style="inset">
-                <li>
-                    <label>TouchPoint Url
-                        <input id="url" data-bind="value: settingsViewModel.fields.url" placeholder="https://www.example.com/test" type="url">
-                    </label>
-                </li>
-                <li>
-                    <label>Username
-                        <input id="username" data-bind="value: settingsViewModel.fields.username" placeholder="myUsername" type="text">
-                    </label>
-                </li>
-                <li>
-                    <label>Password
-                        <input id="password" data-bind="value: settingsViewModel.fields.password" placeholder="******" type="password">
-                    </label>
-                </li>
+        <form id="Settings_Form">
+             <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
+                    </div>
+            <div id="Settings_Text">
+                Please enter your TouchPoint settings which are provided by Eclipse
+            </div>
+            
+            <ul class="form-content"  data-role="listview" data-style="inset">
+             
+                        <li class="Input_login"><input id="url" class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="TouchPoint URL" type="url"></li>
+              
+            
+           
+                      <li class="Input_login">  <input id="username" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text"> </li>
+                    
+               
+                
+             
+                       <li class="Input_login"><input id="password" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password"></li>
+                   
+               
               
             </ul>
             <div class="button-group">
                 <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Save</a>
-                <a data-role="button" data-bind="events: { click: settingsViewModel.cancel }">Cancel</a>
+                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.reset }">Reset</a>
+               
             </div>
         </form>
 

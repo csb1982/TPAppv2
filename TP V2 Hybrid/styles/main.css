@@ -78,8 +78,143 @@
     margin-top: 0.5em;
 }
 #kendoUiMobileApp .km-view-title {
-    background-color: #33b5e6;
+    background:#3e8fc7;
+  
+    color:#fff;
+   
 }
+
+#kendoUiMobileApp .km-view-title span {
+      color:#fff;
+
+   
+}
+
+#kendoUiMobileApp .km-navbar {
+    
+}
+
+
+#kendoUiMobileApp .form-content li.Input_login  {
+    
+    height:50px;
+       -webkit-border-radius: 8px 8px 8px 8px;
+-moz-border-radius: 8px 8px 8px 8px;
+border-radius: 8px 8px 8px 8px;
+    background:#232d39;  
+    margin-top:20px;
+box-shadow: inset 1px 0px 27px -6px #000000;
+-webkit-box-shadow: inset 1px 0px 27px -6px #000000;
+-moz-box-shadow: inset 1px 0px 27px -6px #000000;
+-o-box-shadow: inset 1px 0px 27px -6px #000000;
+    border: solid 2px #374251;
+}
+
+
+#kendoUiMobileApp input.Input_Style {
+    
+    color:#43a8ee !important;
+    width:100%;
+    text-align:center;
+    line-height:20px;
+   
+
+}
+
+#Middle_Form {
+    
+    display: table-cell !important; 
+    vertical-align: middle !important;
+ height:85vh !important;
+}
+
+
+#settingsViewModel {
+  height:100%;
+    display: table;
+    
+}
+
+#Bottom_Buttons {
+
+    
+}
+
+#Bottom_Login_Buttons1 {
+    background:#3e4b5b !important;
+     height:30px;
+    line-height:30px;
+    color:#41a2e5;
+    font-size:12px;
+    font-weight:bold;
+           -webkit-border-radius: 8px 8px 8px 8px;
+-moz-border-radius: 8px 8px 8px 8px;
+border-radius: 8px 8px 8px 8px;
+box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-webkit-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-moz-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-o-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+    
+}
+
+#Bottom_Login_Buttons2 {
+    background:#3e4b5b !important;
+     height:30px;
+    line-height:30px;
+    color:#41a2e5;
+    font-size:12px;
+    font-weight:bold;
+           -webkit-border-radius: 8px 8px 8px 8px;
+-moz-border-radius: 8px 8px 8px 8px;
+border-radius: 8px 8px 8px 8px;
+box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-webkit-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-moz-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-o-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+    
+}
+
+#View_Login_Button {
+           -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+    background:#2274ad !important;
+    height:30px;
+    line-height:30px;
+box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-webkit-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-moz-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-o-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+    
+}
+
+#kendoUiMobileApp input::-webkit-input-placeholder {
+   color: #5d6876;
+}
+
+#kendoUiMobileApp input:-moz-placeholder { /* Firefox 18- */
+   color: #5d6876;  
+}
+
+#kendoUiMobileApp input::-moz-placeholder {  /* Firefox 19+ */
+   color: #5d6876;  
+}
+
+#kendoUiMobileApp input:-ms-input-placeholder {  
+   color: #5d6876;  
+}
+
+#kendoUiMobileApp .km-button {
+     background:#2274ad;
+ 
+}
+
+#kendoUiMobileApp .km-scroll-wrapper {
+     height: 100vh !important;
+   background:#313d4c !important;
+
+}
+
 #tpFrame {
     overflow: auto;
 }
@@ -89,10 +224,133 @@
 .scroll-wrapper {
     height: 100vh !important;
     width: 100% !important;
-    -webkit-overflow-scrolling: touch !important;
-    overflow-y: scroll !important;
+   
 }
 .scroll-wrapper iframe {
     height: 100vh;
     width: 100%;
 }
+
+.Add_Settings  {
+margin: 0 auto; 
+    text-align: center; 
+    width: 70%;
+ }
+
+
+.TouchPoint_Logo_Small {
+    width:50px !important;
+    margin:auto !important;
+     text-align: center !important;
+}
+
+#Welcome_Container {
+      display: table-cell !important; 
+    vertical-align: middle !important;
+    height:100vh !important;
+    width:100% !important;
+    margin: 0 auto; 
+    text-align: center;     
+}
+
+#Main_Container {
+     height:100vh !important;
+    width:100%;
+    margin: 0 auto; 
+    text-align: center; 
+    display: table;
+    
+}
+
+.about-view {
+    color:#41a2e5;
+    
+}
+
+#loading {
+    
+    color:#41a2e5;
+    
+}
+
+
+
+.km-listview-link {
+    color:#41a2e5 !important;
+   background:#232d39 !important;
+    height:70px;
+    line-height:50px !important;    
+border-bottom:1px solid #374352;
+ 
+}
+
+.km-flat .km-list>li {
+background:#232d39 !important;
+    border: solid 0px;
+}
+
+.km-flat .km-view .km-content .km-list > li:last-child {
+    
+    border-bottom: 0px !important;
+}
+
+.km-flat .km-view .km-content .km-list > li:first-child {
+    
+    border-top-width: 0px !important;
+}
+
+.km-flat .km-navbar {
+    
+    border:0px;
+}
+
+#Navigation_Hold {
+    
+    height:100vh !important;
+    background:#232d39;
+}
+
+#Settings_Form {
+      display: table-cell !important; 
+    vertical-align: middle !important;
+    height:90vh !important;
+    width:100% !important;
+    margin: 0 auto; 
+    text-align: center;  
+    
+}
+
+.appTitle {
+    
+    color:#fff;
+}
+
+#Settings_Text {
+    
+    color:#fff !important;
+    width:70%;
+    margin:10px auto;
+}
+
+#kendoUiMobileApp.km-view {
+    
+   -webkit-transform: translate3d(0px, 0px, 0px) scale(1) easeOutBounce !important ;
+    
+}
+
+#kendoUiMobileApp.km-flat .km-loader span.km-loading,
+#kendoUiMobileApp.km-flat .km-loader span.km-loading-left,
+#kendoUiMobileApp.km-flat .km-loader span.km-loading-right {
+    display: none;
+}
+ 
+#kendoUiMobileApp.km-flat div.km-loader:before {
+    content: none;
+}
+ 
+#kendoUiMobileApp.km-flat div.km-loader {
+    background: url(../loader.gif) no-repeat transparent;
+    background-position: center;
+ 
+}
+

@@ -34,7 +34,7 @@
         <!-- application views will be rendered here -->
     </div>
     <!-- No Navigation layout -->
-    <div data-role="layout" data-id="main-nonav">
+    <div data-role="layout" data-id="main-nonav" >
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
@@ -50,16 +50,21 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
+        
+        <div id="Navigation_Hold">
+           
+       
+        
         <ul id="navigation-container" data-role="listview">
-            <li><a href="home/view.html" data-icon="home">Login</a></li>
-            <li><a href="tpView/view.html" data-icon="globe">TouchPoint</a></li>
-            <li><a href="settingsView/view.html" data-icon="bookmarks">Settings</a></li>
-            <li><a href="aboutView/view.html" data-icon="info">About</a></li>
-            <li><a href="contactView/view.html" data-icon="info">Contact</a></li>
-            <li><a href="wizardView/view.html" data-icon="info">Welcome</a></li>
+            <li><a href="home/view.html">Login</a></li>
+            <li><a href="tpView/view.html" >TouchPoint</a></li>
+            <li><a href="settingsView/view.html" >Settings</a></li>
+            <li><a href="aboutView/view.html" >About</a></li>
+        
+           
         </ul>
     </div>
-
+ </div>
     <script src="home/index.js"></script>
     <script src="settingsView/index.js"></script>
     <script src="aboutView/index.js"></script>

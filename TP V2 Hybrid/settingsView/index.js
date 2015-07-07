@@ -110,6 +110,16 @@ app.settingsView = kendo.observable({
             $('#url').val("").change();
 
         },
+        //****************** On reset button click ******************        
+        reset: function () {
+            //Reset user values
+            navigator.notification.alert("All settings cleared");
+            $('#username').val("").change();
+            $('#password').val("").change();
+            $('#url').val("").change();
+            localStorage.clear();
+
+        },
     });
 
     parent.set('settingsViewModel', settingsViewModel);

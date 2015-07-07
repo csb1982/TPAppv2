@@ -1,5 +1,10 @@
-<div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow">
+<div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
     <div class="scroll-wrapper">
+        <div id="loading">
+            <p>
+                <img src="loader-small.gif"> Loading...
+            </p>
+        </div>
         <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post" target="output_frame" style="display:none">
             <input id="site" type="text" name="siteID" value="" />
             <input id="username" type="text" name="userName" value="" />
@@ -11,7 +16,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 var h = $(window).height();
-				// Check and change iframe depending on orientation
+                // Check and change iframe depending on orientation
                 function doOnOrientationChange() {
                     switch (window.orientation) {
                         case -90:
@@ -33,8 +38,18 @@
 
             function submitform() {
                 document.getElementById('tpForm').submit();
+                //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
+                //document.getElementById('tpForm').contentWindow.location.reload();
                 // Hide no settings message
                 document.getElementById("noSettings").style.display = "none";
+                /*
+                var loading = setTimeout(function () {
+                    document.getElementById('tpForm').submit();
+                }, 2000);
+                */
+                var loading = setTimeout(function () {
+                    document.getElementById('loading').style.display = "none";
+                }, 5000);
             }
         </script>
     </div>

@@ -1,18 +1,20 @@
 <div data-role="view" data-title="Welcome" data-layout="main" data-model="app.wizardView" data-show="app.wizardView.onShow">
+   
+    <div id="Main_Container">
+        
     
-    <div>
-        <H1>
+    <div id="Welcome_Container">
+        
+    
+    <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
+            </div>
+         
+            <H1 style="color:#f4f4f4; text-align:center;">
             Welcome to the TouchPoint App
         </H1>
-        <p>
-            Please continue through the tour 
-        </p>
-        
-        <button style="width: 100%" data-role="button" data-bind="events: { click: wizardViewModel.submit }">Add settings</button>
-    </div>
-    
-    
-    
-    
-  
-</div>
+            <p style="color:#f4f4f4; text-align:center; ">
+                Please continue through the tour
+            </p>
+            <button class="Add_Settings" data-role="button" data-bind="events: { click: wizardViewModel.submit }">Add settings</button>
+    </div></div></div>
+

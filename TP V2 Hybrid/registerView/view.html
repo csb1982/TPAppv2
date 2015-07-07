@@ -1,28 +1,15 @@
 <div data-role="view" data-title="Register" data-layout="main" data-model="app.registerView" data-show="app.registerView.onShow">
     <!--Register-->
         <form>
-            <ul data-role="listview" data-style="inset">
-                <li>
-                    <label>
-                        Email Address:
-                        <input type="email" name="email" data-bind="value: email">
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        Username:
-                        <input type="text" name="username" data-bind="value: registerViewModel.fields.username">
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        Password:
-                        <input type="password" name="password" data-bind="value: registerViewModel.fields.password">
-                    </label>
-                </li>
-                <li>
-                    <button style="width: 100%" data-role="button" data-bind="events: { click: registerViewModel.submit }">Register</button>
-                </li>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="Input_login"><input type="email"  class="Input_Style" name="email" placeholder="Email" data-bind="value: email"></li>
+                
+                <li class="Input_login"><input type="text" name="username"  class="Input_Style" placeholder="Username" data-bind="value: registerViewModel.fields.username"></li>
+                
+                <li class="Input_login"><input type="password" name="password"  class="Input_Style" placeholder="Password" data-bind="value: registerViewModel.fields.password"></li>
+                
+                    <button style="width:100%; margin-top:20px;" data-role="button" data-bind="events: { click: registerViewModel.submit }">Register</button>
+               
             </ul>
         </form>
     </div>
