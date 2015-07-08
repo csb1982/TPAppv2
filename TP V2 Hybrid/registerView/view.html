@@ -14,7 +14,17 @@
                     <button style="width:100%; margin-top:20px;" data-role="button" data-bind="events: { click: registerViewModel.submit }">Continue</button>
                
             </ul>
+            <input id="submitBT" data-bind="events: { click: registerViewModel.submit }" value="Continue">
         </form>
     </div>
     <!-- Register End-->
+    <!--Use device keyboard enter click to simulate button click-->
+    <script>
+        $("#tpSettings input").keyup(function (e) { //inputs on login view should call submit on 'enter'
+            if (e.keyCode === 13) {
+                $('#submitBT').trigger('click');
+                $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
+            }
+        });
+    </script>
 </div>

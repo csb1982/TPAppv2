@@ -10,15 +10,17 @@
 }
 #kendoUiMobileApp .button-group,
 #kendoUiMobileApp .icon-group {
-    width: 100%;
+ width:100% !important;
     display: table;
     border-collapse: separate;
     border-spacing: 1em;
+
 }
 #kendoUiMobileApp .button-group {
     table-layout: fixed;
 }
 #kendoUiMobileApp .button-group .km-button {
+   
     display: table-cell;
     padding: .6em .8em;
     margin: 1em 0;
@@ -174,19 +176,6 @@ box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
     
 }
 
-#View_Login_Button {
-           -webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-    background:#2274ad !important;
-    height:30px;
-    line-height:30px;
-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
--webkit-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
--moz-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
--o-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
-    
-}
 
 #kendoUiMobileApp input::-webkit-input-placeholder {
    color: #5d6876;
@@ -353,4 +342,36 @@ background:#232d39 !important;
     background-position: center;
  
 }
+
+#View_Login_Button {
+           -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+    background:#2274ad !important;
+    width:100% !important;
+    height:30px;
+    line-height:30px;
+box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-webkit-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-moz-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+-o-box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
+    
+}
+
+#submitBT {
+    
+    width:100% !important;
+    background:#01579b;
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+    border:0px;
+    height:50px;
+    color:#fff;
+    text-align:center;
+    font-size:16px;
+    margin-top:20px;
+
+}
+
 
