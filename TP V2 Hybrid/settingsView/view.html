@@ -1,37 +1,36 @@
 <div data-role="view" data-title="Settings" data-layout="main" data-model="app.settingsView" data-show="app.settingsView.onShow" id="tpSettings">
-    
-    
     <div id="settingsViewModel" class="form-view">
-
         <form id="Settings_Form">
-             <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
-                    </div>
-            <div id="Settings_Text">
-                Please enter your TouchPoint settings which are provided by Eclipse
+            <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
             </div>
-            
-            <ul class="form-content"  data-role="listview" data-style="inset">
-             
-                        <li class="Input_login"><input id="url" class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="TouchPoint URL" type="url"></li>
-              
-            
-           
-                      <li class="Input_login">  <input id="username" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text"> </li>
-                    
-               
-                
-             
-                       <li class="Input_login"><input id="password" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password"></li>
-                   
-               
-              
+            <div id="Settings_Text">
+                Please enter your TouchPoint settings which are provided by Eclipse Legal Systems
+            </div>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="Input_login">
+                    <input id="url" class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="TouchPoint URL" type="url">
+                </li>
+                <li class="Input_login">
+                    <input id="username" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text"> </li>
+                <li class="Input_login">
+                    <input id="password" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
+                </li>
             </ul>
             <div class="button-group">
-                <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.submit }">Save</a>
+                <a id="submitBT" class="km-state-active"  data-bind="events: { click: settingsViewModel.submit }">Save</a>
+                <!--
                 <a class="km-state-active" data-role="button" data-bind="events: { click: settingsViewModel.reset }">Reset</a>
-               
+               -->
             </div>
         </form>
-
     </div>
+    <!--Use device keyboard enter click to simulate button click-->
+    <script>
+        $("#tpSettings input").keyup(function (e) { //inputs on login view should call submit on 'enter'
+            if (e.keyCode === 13) {
+                $('#submitBT').trigger('click');				
+                $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
+            }
+        });
+    </script>
 </div>

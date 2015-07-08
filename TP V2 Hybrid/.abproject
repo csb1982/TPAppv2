@@ -3,9 +3,9 @@
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
   "AppIdentifier": "com.healy.TelerikApp",
-  "DisplayName": "TP V5",
+  "DisplayName": "TouchPoint Notifications",
   "Author": "CB",
-  "Description": "TP V5",
+  "Description": "This app is designed to register and receive notifications from TouchPoint",
   "BundleVersion": "2.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

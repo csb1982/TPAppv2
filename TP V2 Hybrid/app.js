@@ -133,6 +133,7 @@ var iOSNotificationReceived = function (args) {
                 }
             );
             
+            //End
         },
     };
 

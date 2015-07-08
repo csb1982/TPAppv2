@@ -1,9 +1,21 @@
 'use strict';
-
+//*********************************************************
+function myFunction1(){
+        alert("here 2");
+    //****************************
+    
+    //****************************
+    
+    
+    
+    }
+//*********************************************************
 app.settingsView = kendo.observable({
     onShow: function () {}
 });
 (function (parent) {
+    
+    
 
     //Backend api key
     var apiKey = "vv4BtGwI2jSFFWd6";
