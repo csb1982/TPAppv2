@@ -18,7 +18,7 @@ app.settingsView = kendo.observable({
     
 
     //Backend api key
-    var apiKey = "vv4BtGwI2jSFFWd6";
+    var apiKey = "SjYFsW3FKM9zpUQ2";
     var el = new Everlive(apiKey);
 
     //Select data source to transport

@@ -67,6 +67,7 @@ app.tpView = kendo.observable({
 
 
                         submitform();
+                        submitform();
                         // Show iframe
                         document.getElementById('tpFrame').style.display = "initial";
                         // Show loading image

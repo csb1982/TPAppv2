@@ -8,7 +8,7 @@ app.home = kendo.observable({
 
 (function (parent) {
     //Backend API key
-    var apiKey = "vv4BtGwI2jSFFWd6"; // Telerik API key
+    var apiKey = "SjYFsW3FKM9zpUQ2"; // Telerik API key
     var el = new Everlive(apiKey);
 
     var dataSource = new kendo.data.DataSource({

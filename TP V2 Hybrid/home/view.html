@@ -9,9 +9,9 @@
                 </li>
                 <li class="Input_login">
                     <input class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
-                </li>    <input id="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Login">
+                </li>
+                <input id="loginBT" class="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Login" readonly >
             </ul>
-        
             <div class="button-group">
                 <!--
                 <a class="km-state-active" id="View_Login_Button" data-bind="events: { click: settingsViewModel.submit }">Login</a>
@@ -26,9 +26,9 @@
     </div>
     <!--Use device keyboard enter click to simulate button click-->
     <script>
-        $("#View_Login_Button").keyup(function (e) { //inputs on login view should call submit on 'enter'
+        $("#login input").keyup(function (e) { //inputs on login view should call submit on 'enter'
             if (e.keyCode === 13) {
-                $('#submitBT').trigger('click');
+                $('#loginBT').trigger('click');
                 $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
             }
         });

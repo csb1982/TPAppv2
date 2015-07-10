@@ -358,7 +358,7 @@ box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
     
 }
 
-#submitBT {
+.submitBT {
     
     width:100% !important;
     background:#01579b;

@@ -14,9 +14,9 @@
                     <input id="username" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text"> </li>
                 <li class="Input_login">
                     <input id="password" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
-                </li> <input id="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Save">
+                </li>
+                <input id="saveBT" class="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Save" readonly>
             </ul>
-           
             <div class="button-group">
                 <!--
 <a id="submitBT" class="Input_Style" data-bind="events: { click: settingsViewModel.submit }">Save</a>
@@ -29,7 +29,7 @@
     <script>
         $("#tpSettings input").keyup(function (e) { //inputs on login view should call submit on 'enter'
             if (e.keyCode === 13) {
-                $('#submitBT').trigger('click');
+                $('#saveBT').trigger('click');
                 $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
             }
         });
