@@ -10,8 +10,10 @@
             <input id="username" type="text" name="userName" value="" />
             <input id="password" type="text" name="password" value="" />
         </form>
-        <h3 id="noSettings">No Touchpoint settings saved, please go back to the settings page and enter the Touchpont settings</h3>
-         <button id="settingBT" style="width:100%; margin-top:20px;" data-role="button" data-bind="events: { click: tpViewModel.submit }">Settings</button>
+
+            <h3 id="noSettings">No Touchpoint settings saved, please go back to the settings page and enter the Touchpont settings</h3>
+            <button id="settingBT" data-role="button" data-bind="events: { click: tpViewModel.submit }">Settings</button>
+
         <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch;">
         </iframe>
         <script type="text/javascript">
@@ -38,7 +40,6 @@
             });
 
             function submitform() {
-                alert("test");
                 document.getElementById('tpForm').submit();
                 //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
                 //document.getElementById('tpForm').contentWindow.location.reload();

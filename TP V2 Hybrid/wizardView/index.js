@@ -5,7 +5,7 @@ app.wizardView = kendo.observable({
 });
 
 (function (parent) {
-
+localStorage.setItem("firstTime", "1");
     //Select data source to transport
     var dataSource = new kendo.data.DataSource({
         type: "everlive",
@@ -19,7 +19,7 @@ app.wizardView = kendo.observable({
         //****************** On save button click ******************
         submit: function () {
 
-            app.mobileApp.navigate("registerView/view.html");
+            app.mobileApp.navigate("home/view.html");
         }
 
     });

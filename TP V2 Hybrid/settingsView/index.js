@@ -1,15 +1,5 @@
 'use strict';
-//*********************************************************
-function myFunction1(){
-        alert("here 2");
-    //****************************
-    
-    //****************************
-    
-    
-    
-    }
-//*********************************************************
+
 app.settingsView = kendo.observable({
     onShow: function () {}
 });
@@ -47,15 +37,15 @@ app.settingsView = kendo.observable({
 
             // Check settings for been inputted 
             if (!username) {
-                navigator.notification.alert("Username is required.");
+                navigator.notification.alert("Username is required.","","");
                 return;
             }
             if (!password) {
-                navigator.notification.alert("Password is required.");
+                navigator.notification.alert("Password is required.","","");
                 return;
             }
             if (!url) {
-                navigator.notification.alert("Url is required.");
+                navigator.notification.alert("Url is required.","","");
                 return;
             }
 
@@ -84,7 +74,7 @@ app.settingsView = kendo.observable({
                     //Sync data source
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been saved");
+                    navigator.notification.alert("Settings have been saved","","");
                     saved = 1;
                     app.mobileApp.navigate("tpView/view.html");
                 }
@@ -97,7 +87,7 @@ app.settingsView = kendo.observable({
                     });
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been updated");
+                    navigator.notification.alert("Settings have been updated","","");
                     saved = 1;
                     app.mobileApp.navigate("tpView/view.html");
                 }
@@ -108,7 +98,7 @@ app.settingsView = kendo.observable({
             // If haven't saved data, send back to login screen.
             var interval = setTimeout(function () {
                 if (saved == 0) {
-                    navigator.notification.alert("Unfortunately we could not find your account.");
+                    navigator.notification.alert("Unfortunately we could not find your account.","","");
                     app.mobileApp.navigate("home/view.html");
                 }
             }, 5000);
@@ -125,7 +115,7 @@ app.settingsView = kendo.observable({
         //****************** On reset button click ******************        
         reset: function () {
             //Reset user values
-            navigator.notification.alert("All settings cleared");
+            navigator.notification.alert("All settings cleared","","");
             $('#username').val("").change();
             $('#password').val("").change();
             $('#url').val("").change();

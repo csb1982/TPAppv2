@@ -97,6 +97,7 @@ var iOSNotificationReceived = function (args) {
             //**********************************************************
             /* disable notifications so can test in browser
              */
+            /*
            
             var everlive = new Everlive({
                 apiKey: 'SjYFsW3FKM9zpUQ2', // Telerik API key
@@ -132,7 +133,7 @@ var iOSNotificationReceived = function (args) {
                     navigator.notification.alert("Unfortunately we could register your device for push notifications");
                 }
             );
-            
+            */
             //End
         },
     };

@@ -15,8 +15,28 @@
                 <input type="password" name="password" class="Input_Style" placeholder="Password" data-bind="value: registerViewModel.fields.password">
             </li>
             <input id="continueBT" class="submitBT" data-bind="events: { click: registerViewModel.submit }" value="Continue" readonly>
+            
+
         </ul>
     </form>
+    <!---->
+        <form>
+        <ul class="form-content" data-role="listview" data-style="inset">
+            <li class="Input_login">
+                <input type="email" class="Input_Style" name="email" placeholder="Email Address" data-bind="value: email">
+            </li>
+            <li class="Input_login">
+                <input type="text" name="username" class="Input_Style" placeholder="Username" data-bind="value: registerViewModel.fields.username">
+            </li>
+            <li class="Input_login">
+                <input type="password" name="password" class="Input_Style" placeholder="Password" data-bind="value: registerViewModel.fields.password">
+            </li>
+            <input id="continueBT1" class="submitBT" data-bind="events: { click: registerViewModel.login }" value="Continue" readonly>
+            
+
+        </ul>
+    </form>
+	<!---->
     <!--Use device keyboard enter click to simulate button click-->
     <script>
         $("#tpRegister input").keyup(function (e) { //inputs on login view should call submit on 'enter'
@@ -25,5 +45,10 @@
                 $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
             }
         });
+
+        function test() {
+            alert("In submitformLog");
+            $('#continueBT1').trigger('click');
+        }
     </script>
 </div>

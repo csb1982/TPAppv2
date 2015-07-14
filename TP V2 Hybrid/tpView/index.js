@@ -24,6 +24,7 @@ app.tpView = kendo.observable({
             document.getElementById('loading').style.display = "initial";
             // Hide settings button
             document.getElementById('settingBT').style.display = "none";
+            
         } else {
             // Hide form
             document.getElementById('tpForm').style.display = "none";
@@ -76,12 +77,12 @@ app.tpView = kendo.observable({
                         document.getElementById('settingBT').style.display = "none";
 
                     } else {
-                        navigator.notification.alert("Url does not match site address");
+                        navigator.notification.alert("Url does not match site address","","");
                         app.mobileApp.navigate("settingsView/view.html");
                     }
 
                 } else {
-                    navigator.notification.alert("No data stored. Please complete the Welcome wizard");
+                    navigator.notification.alert("No data stored. Please complete the Welcome wizard","","");
                     app.mobileApp.navigate("wizardView/view.html");
                 }
 

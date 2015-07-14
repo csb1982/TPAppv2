@@ -81,8 +81,9 @@
 }
 #kendoUiMobileApp .km-view-title {
     background:#3e8fc7;
-  
+  height:70px;
     color:#fff;
+    line-height:85px;
    
 }
 
@@ -206,15 +207,32 @@ box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
 
 #tpFrame {
     overflow: auto;
+    width:100% !important;
 }
 #home {
     background-color: #2b2b2b;
 }
 .scroll-wrapper {
-    height: 100vh !important;
-    width: 100% !important;
-   
+
+    vertical-align: middle !important;
+    height:100vh !important;
+    width:100% !important;
+    margin: 0 auto; 
+    text-align: center; 
+  
 }
+
+#Settings-Wrapper {
+      display: table-cell !important; 
+    vertical-align: middle !important;
+      height:100vh !important;
+    width:100% !important;
+    margin: 0 auto; 
+    text-align: center; 
+  margin:20px;
+    padding:20px;
+}
+
 .scroll-wrapper iframe {
     height: 100vh;
     width: 100%;
@@ -239,7 +257,8 @@ margin: 0 auto;
     height:100vh !important;
     width:100% !important;
     margin: 0 auto; 
-    text-align: center;     
+    text-align: center; 
+    padding:20px;
 }
 
 #Main_Container {
@@ -371,7 +390,54 @@ border-radius: 5px;
     text-align:center;
     font-size:16px;
     margin-top:20px;
+    
+    
+    
+    
+
+}
+
+#settingBT {
+     width:90% !important;
+    background:#01579b;
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+    border:0px;
+    height:50px;
+    color:#fff;
+    text-align:center;
+    font-size:16px;
+    margin-top:20px;
+    
+ /* Centres object */   
+position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    
+}
+
+#noSettings {
+    
+    color:#ccc;
+     /* Centres object */   
+position: fixed;
+  top: 25%;
+
 
 }
 
 
+#kendoUiMobileApp .km-button {
+    
+    margin-top:20px;
+}
+
+.km-icon:after {
+    
+    width:100px;
+    height:100px;
+    margin-left:-42px;
+    text-align:center;
+}

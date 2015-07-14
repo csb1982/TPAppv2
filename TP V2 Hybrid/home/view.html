@@ -10,6 +10,12 @@
                 <li class="Input_login">
                     <input class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
                 </li>
+                <li id="email" class="Input_login">
+                    <input  class="Input_Style" data-bind="value: settingsViewModel.fields.email" placeholder="Email" type="email">
+                </li>
+                <li id="url" class="Input_login">
+                    <input  class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="TouchPoint URL" type="url">
+                </li>                
                 <input id="loginBT" class="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Login" readonly >
             </ul>
             <div class="button-group">
@@ -32,5 +38,6 @@
                 $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
             }
         });
+        
     </script>
 </div>

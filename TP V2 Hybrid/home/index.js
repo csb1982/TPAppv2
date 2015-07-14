@@ -1,8 +1,25 @@
 'use strict';
 
 app.home = kendo.observable({
-    onShow: function () {
+    onShow: function (e) {
         $("#appDrawer").data("kendoMobileDrawer").hide();
+
+        // Check its first time for the user if so change login view to a register view.
+        if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
+            $("#email").show();
+            $("#url").show();
+            $("#loginBT").val("Register");
+            $("#Bottom_Login_Buttons2").hide();
+            //localStorage.setItem("firstTime", "");
+        } else {
+            $("#email").hide();
+            $("#url").hide();
+            $("#Bottom_Login_Buttons2").show();
+            $("#loginBT").val("Login");
+            //$("#login").data("kendoMobileNavBar").title("MyCustomTitle");           
+
+        }
+
     }
 });
 
@@ -16,102 +33,247 @@ app.home = kendo.observable({
         transport: {
             typeName: "userSettings"
         }
-    });  
-    
+    });
+
     var settingsViewModel = kendo.observable({
         fields: {
             password: '',
             username: '',
+            email: '',
             url: '',
         },
 
-        submit: function () {            
+        //**********************
+        submit: function () {
             // Set Setting values with whats inputted
             var username = settingsViewModel.fields.username;
             var password = settingsViewModel.fields.password;
+            var email = settingsViewModel.fields.email;
             var url = settingsViewModel.fields.url;
             if (!username) {
-                navigator.notification.alert("Username is required.");
+                navigator.notification.alert("Username is required.", "", "");
                 return;
             }
             if (!password) {
-                navigator.notification.alert("Password is required.");
+                navigator.notification.alert("Password is required.", "", "");
                 return;
             }
-            el.Users.login(username, password,
-                function (data) {
-                    //Select data source to transport
-                    var dataSource = new kendo.data.DataSource({
-                        type: "everlive",
-                        transport: {
-                            typeName: "userSettings"
-                        }
-                    });
+            if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
 
-                    //Fetch data from Backend
-                    dataSource.fetch(function () {
-                        var datasourcedata = dataSource.data();
-                        var c = 0;
+            }
+            /*
+            if (!email) {
+                navigator.notification.alert("Email address is required.","","");
+                return;
+            }
+            if (!url) {
+                navigator.notification.alert("TouchPoint URL is required.","","");
+                return;
+            }
+            */
+            // If first time get user to register
+            if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
 
-                        // iterate through all data
-                        for (var i = 0; i < datasourcedata.length; i++) {
-                            c++;
-                        }
-
-                        //If data send to tp view
-                        if (c > 0) {
-                            // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
-
-							// Set values from backend service
-                            var username = datasourcedata[0].username;
-                            var password = datasourcedata[0].password;
-                            var url = datasourcedata[0].url;
-                            var page = url.substring(url.lastIndexOf('/') + 1);
-
-                            app.mobileApp.navigate("tpView/view.html");
-
-/*
-
-                            $.ajax({
-                                    url: url,
-                                    type: "POST",
-                                    data: {
-                                        userName: username,
-                                        password: password,
-                                        siteID: page
+                el.Users.register(username, password, {
+                        Email: email
+                    },
+                    function () {
+                        navigator.notification.alert("Your account was successfully created.", "", "");
+                        el.Users.login(username, password,
+                            function (data) {
+                                //Select data source to transport
+                                var dataSource = new kendo.data.DataSource({
+                                    type: "everlive",
+                                    transport: {
+                                        typeName: "userSettings"
                                     }
-                                })
-                                .done(function (data) {
-                                    //use data from server
-                                    //alert("Done ");
-                                })
-                                .fail(function () {
-                                    //alert("Error ");
                                 });
-*/
 
+                                //Fetch data from Backend
+                                dataSource.fetch(function () {
+                                    var datasourcedata = dataSource.data();
+                                    var c = 0;
 
-                        } else {
-                            // Call the instance of kendo.mobile.Application that was created in app.js bootstrap.                 
-                            app.mobileApp.navigate("settingsView/view.html");
-                        }
+                                    // iterate through all data
+                                    for (var i = 0; i < datasourcedata.length; i++) {
+                                        c++;
+                                    }
 
+                                    //If data send to tp view
+                                    if (c > 0) {
+                                        // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
+                                        // Set values from backend service
+                                        var username1 = datasourcedata[0].username;
+                                        var password1 = datasourcedata[0].password;
+                                        var url1 = datasourcedata[0].url;
+                                        var page1 = url.substring(url.lastIndexOf('/') + 1);
+
+                                        app.mobileApp.navigate("tpView/view.html");
+
+                                    } else {
+                                        // Add user settings to database
+                                        dataSource.add({
+                                            username: username,
+                                            password: password,
+                                            url: url
+                                        });
+                                        dataSource.one("sync", this.close);
+                                        dataSource.sync();
+                                        if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
+
+                                            localStorage.setItem("firstTime", "");
+                                        }
+                                        navigator.notification.alert("TouchPoint Settings have been created", "", "");
+                                        app.mobileApp.navigate("tpView/view.html");
+
+                                    }
+
+                                });
+                                dataSource.read();
+                            },
+                            function () {
+                                navigator.notification.alert("Unfortunately we could not find your account.", "", "");
+                            });
+                    },
+                    function () {
+                        navigator.notification.alert("Unfortunately we were unable to create your account.", "", "");
                     });
-                    dataSource.read();
+                //end register
+            } else {
+
+                el.Users.login(username, password,
+                    function (data) {
+                        //Select data source to transport
+                        var dataSource = new kendo.data.DataSource({
+                            type: "everlive",
+                            transport: {
+                                typeName: "userSettings"
+                            }
+                        });
+
+                        //Fetch data from Backend
+                        dataSource.fetch(function () {
+                            var datasourcedata = dataSource.data();
+                            var c = 0;
+
+                            // iterate through all data
+                            for (var i = 0; i < datasourcedata.length; i++) {
+                                c++;
+                            }
+
+                            //If data send to tp view
+                            if (c > 0) {
+                                // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
+                                // Set values from backend service
+                                var username1 = datasourcedata[0].username;
+                                var password1 = datasourcedata[0].password;
+                                var url1 = datasourcedata[0].url;
+                                var page1 = url.substring(url.lastIndexOf('/') + 1);
+
+                                app.mobileApp.navigate("tpView/view.html");
+
+                            } else {
+                                // Add user settings to database
+                                dataSource.add({
+                                    username: username,
+                                    password: password,
+                                    url: url
+                                });
+                                dataSource.one("sync", this.close);
+                                dataSource.sync();
+                                if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
+
+                                    localStorage.setItem("firstTime", "");
+                                }                                
+                                navigator.notification.alert("TouchPoint Settings have been created", "", "");
+                                app.mobileApp.navigate("tpView/view.html");
+
+                            }
+
+                        });
+                        dataSource.read();
+                    },
+                    function () {
+                        navigator.notification.alert("Unfortunately we could not find your account.", "", "");
+                    });
+                // Else end
+            }
+
+
+            /*
+            el.Users.register(username, password, {
+                    Email: email
                 },
                 function () {
-                    navigator.notification.alert("Unfortunately we could not find your account.");
-                });
+                    navigator.notification.alert("Your account was successfully created.", "", "");
+                    el.Users.login(username, password,
+                        function (data) {
+                            //Select data source to transport
+                            var dataSource = new kendo.data.DataSource({
+                                type: "everlive",
+                                transport: {
+                                    typeName: "userSettings"
+                                }
+                            });
 
+                            //Fetch data from Backend
+                            dataSource.fetch(function () {
+                                var datasourcedata = dataSource.data();
+                                var c = 0;
+
+                                // iterate through all data
+                                for (var i = 0; i < datasourcedata.length; i++) {
+                                    c++;
+                                }
+
+                                //If data send to tp view
+                                if (c > 0) {
+                                    // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
+                                    // Set values from backend service
+                                    var username1 = datasourcedata[0].username;
+                                    var password1 = datasourcedata[0].password;
+                                    var url1 = datasourcedata[0].url;
+                                    var page1 = url.substring(url.lastIndexOf('/') + 1);
+
+                                    app.mobileApp.navigate("tpView/view.html");
+
+                                } else {
+                                    // Add user settings to database
+                                    dataSource.add({
+                                        username: username,
+                                        password: password,
+                                        url: url
+                                    });
+                                    dataSource.one("sync", this.close);
+                                    dataSource.sync();
+                                    navigator.notification.alert("TouchPoint Settings have been created", "", "");
+                                    app.mobileApp.navigate("tpView/view.html");
+                                    if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
+
+                                        localStorage.setItem("firstTime", "");
+                                    }
+                                }
+
+                            });
+                            dataSource.read();
+                        },
+                        function () {
+                            navigator.notification.alert("Unfortunately we could not find your account.", "", "");
+                        });
+                },
+                function () {
+                    navigator.notification.alert("Unfortunately we were unable to create your account.", "", "");
+                });
+            */
         },
         register: function () {
             app.mobileApp.navigate("registerView/view.html");
         },
-        
+
         reset: function () {
             app.mobileApp.navigate("resetView/view.html");
         }
-    });   
+    });
 
     parent.set('settingsViewModel', settingsViewModel);
 })(app.home);

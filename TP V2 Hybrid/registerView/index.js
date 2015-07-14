@@ -1,8 +1,12 @@
 'use strict';
 
 app.registerView = kendo.observable({
-    onShow: function() {}
+    onShow: function () {
+        
+
+    }
 });
+
 (function (parent) {
     //Backend api key
     var apiKey = "SjYFsW3FKM9zpUQ2";
@@ -28,7 +32,7 @@ app.registerView = kendo.observable({
             var username = registerViewModel.fields.username;
             var password = registerViewModel.fields.password;
             var url = registerViewModel.fields.url;
-            
+
             if (!username) {
                 navigator.notification.alert("Username is required.");
                 return;
@@ -42,23 +46,43 @@ app.registerView = kendo.observable({
                 },
                 function () {
                     navigator.notification.alert("Your account was successfully created.");
-                app.mobileApp.navigate("home/view.html");
-               /*
-                //Log user in
-                el.Users.login(username, password,
-                function (data) {
-                    dataSource.read();
-                    app.mobileApp.navigate("settingsView/view.html");
-                },
-                function () {
-                    navigator.notification.alert("Unfortunately we could not find your account.");
-                });
-                	*/
+                    //app.mobileApp.navigate("home/view.html");
+                
+                //****
+                        localStorage.setItem("username", username);
+                        localStorage.setItem("password", password);
+                        localStorage.setItem("url", url);
+                app.mobileApp.navigate("contactView/view.html");
+                //****
+                
+                    //test();
+
                 },
                 function () {
                     navigator.notification.alert("Unfortunately we were unable to create your account.");
                 });
-        }     
+        },
+
+        login: function () {
+            alert("in login");
+            var username = "c";
+            var password = "c";
+            el.Users.login(username, password,
+                function (data) {
+                    alert("logged in");
+                    //*/**
+//app.mobileApp.navigate("home/view.html", "#id1=2");
+                
+                
+                    //*/**
+
+
+                },
+                function () {
+                    navigator.notification.alert("Unfortunately we could not find your account.","","");
+                });
+
+        }
     });
 
     parent.set('registerViewModel', registerViewModel);
