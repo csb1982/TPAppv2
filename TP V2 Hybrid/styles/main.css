@@ -209,6 +209,7 @@ box-shadow: inset -50px -50px 0px -100px #000000,0px 1px 30px -13px #000000;
     overflow: auto;
     width:100% !important;
     border-color: #232D39 !important;
+    background-color: transparent!important;
 }
 #home {
     background-color: #2b2b2b;
@@ -399,10 +400,6 @@ border-radius: 5px;
     text-align:center;
     font-size:16px;
     margin-top:20px;
-    
-    
-    
-    
 
 }
 
@@ -436,7 +433,6 @@ position: fixed;
 }
 
 #noSettings {
-    
     color:#ccc;
      /* Centres object */   
 position: fixed;

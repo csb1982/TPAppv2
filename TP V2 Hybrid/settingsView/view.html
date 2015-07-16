@@ -15,14 +15,16 @@
                 <li class="Input_login">
                     <input id="settingUrl" class="Input_Style" data-bind="value: cViewModel.fields.url" placeholder="TouchPoint URL" type="url">
                 </li>
+                <!--
                 <li class="Input_login">
                     <input id="settingUsername" class="Input_Style" data-bind="value: cViewModel.fields.username" placeholder="Username" type="text">
 				</li>
                 <li class="Input_login">
                     <input id="SettingPassword" class="Input_Style" data-bind="value: cViewModel.fields.password" placeholder="Password" type="password">
                 </li>
+				-->
                 <input id="saveBT" class="submitBT" data-bind="events: { click: cViewModel.submit }" value="Save" readonly>
-
+<a class="km-state-active" data-role="button" data-bind="events: { click: cViewModel.reset }">Reset</a>
             </ul>
 
             <div class="button-group">

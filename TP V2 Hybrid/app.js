@@ -55,7 +55,6 @@ var iOSNotificationReceived = function (args) {
 
         location = 'tpView/view.html';
     } else {
-        alert("Setting this as first time");
         localStorage.setItem("firstTime", "1");
     }
 

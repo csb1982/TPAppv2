@@ -2,6 +2,8 @@
 
 app.tpView = kendo.observable({
     onShow: function () {
+        // Set iframe visibility to hidden to stop iframe flash
+        document.getElementById('tpFrame').style.visibility = "hidden";
         // Hide iframe
         document.getElementById('tpFrame').style.display = "none";
         // Hide loading image
@@ -9,6 +11,7 @@ app.tpView = kendo.observable({
         // Hide settings button
         document.getElementById('settingBT').style.display = "none";
         document.getElementById('noSettings').style.display = "none";
+
 
         // Check for stored user data on device
         if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
@@ -29,8 +32,11 @@ app.tpView = kendo.observable({
             document.getElementById('settingBT').style.display = "none";
 
         } else {
-            document.getElementById('settingBT').style.display = "initial";
-            document.getElementById('noSettings').style.display = "initial";
+            //document.getElementById('settingBT').style.display = "initial";
+            //document.getElementById('noSettings').style.display = "initial";
+            //document.getElementById('noSettings').style.color = "#ccc";
+            //document.getElementById('settingBT').style.color = "#fff";
+            //document.getElementById('settingBT').style.background = "#01579b";
             // Hide form
             document.getElementById('tpForm').style.display = "none";
             //Select data source to transport
@@ -54,6 +60,9 @@ app.tpView = kendo.observable({
 
                 //Check if values are stored within background service and are of eclipse format
                 if (c > 0) {
+
+                    document.getElementById('settingBT').style.display = "none";
+                    document.getElementById('noSettings').style.display = "none";
                     var result = datasourcedata[0].url;
                     if (result.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
                         var username = datasourcedata[0].username;
@@ -65,11 +74,12 @@ app.tpView = kendo.observable({
                         localStorage.setItem("password", password);
                         localStorage.setItem("url", url);
                         localStorage.setItem("page", page);
+                        localStorage.setItem("tp", "on");
 
                         document.getElementById("username").value = username;
                         document.getElementById("password").value = password;
                         document.getElementById("site").value = page;
-                        
+
                         submitform();
                         submitform();
                         // Show iframe
@@ -78,6 +88,8 @@ app.tpView = kendo.observable({
                         document.getElementById('loading').style.display = "initial";
                         // Hide settings button
                         document.getElementById('settingBT').style.display = "none";
+                        document.getElementById('noSettings').style.display = "none";
+
 
                     } else {
                         navigator.notification.alert("Url does not match site address", "", " ");
@@ -90,6 +102,16 @@ app.tpView = kendo.observable({
                 }
 
             });
+
+            // Hide settings button and description. 
+            var interval = setTimeout(function () {
+                if (localStorage.getItem("tp") !== "1") {
+                    document.getElementById('settingBT').style.display = "initial";
+                    document.getElementById('noSettings').style.display = "initial";
+                    localStorage.setItem("tp", "");
+                }
+            }, 500);
+
 
         }
 

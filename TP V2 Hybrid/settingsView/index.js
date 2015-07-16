@@ -28,11 +28,12 @@ app.settingsView = kendo.observable({
             var saved = 0;
 
             // Set Setting values from user input
-            var username = cViewModel.fields.username;
-            var password = cViewModel.fields.password;
+            //var username = cViewModel.fields.username;
+            //var password = cViewModel.fields.password;
             var url = cViewModel.fields.url;
 
-            // Check settings for been inputted 
+            // Check settings for been inputted
+            /*
             if (!username) {
                 navigator.notification.alert("Username is required.",""," ");
                 return;
@@ -41,6 +42,7 @@ app.settingsView = kendo.observable({
                 navigator.notification.alert("Password is required.",""," ");
                 return;
             }
+            */
             if (!url) {
                 navigator.notification.alert("Url is required.",""," ");
                 return;
@@ -48,6 +50,7 @@ app.settingsView = kendo.observable({
 
             //Fetch data from Backend
             dataSource.fetch(function () {
+                alert("fetch");
                 var datasourcedata = dataSource.data();
                 var c = 0;
 
@@ -58,12 +61,13 @@ app.settingsView = kendo.observable({
 
                 //If data exists, update data
                 if (c > 0) {
+                    /*
                     var item1 = dataSource.data()[0];
                     item1.set('username', username);
 
                     var item2 = dataSource.data()[0];
                     item2.set('password', password);
-
+					*/
                     var item3 = dataSource.data()[0];
                     item3.set('url', url);
                     
@@ -76,8 +80,8 @@ app.settingsView = kendo.observable({
                     saved = 1;
                     
                     // Set local storage with database data
-                    localStorage.setItem("username", username);
-                    localStorage.setItem("password", password);
+                    //localStorage.setItem("username", username);
+                    //localStorage.setItem("password", password);
                     localStorage.setItem("url", url);
                     localStorage.setItem("page", page);
                     
@@ -96,9 +100,10 @@ app.settingsView = kendo.observable({
                     saved = 1;
                     
                     // Set local storage with new data
-                    localStorage.setItem("username", username);
-                    localStorage.setItem("password", password);
+                    //localStorage.setItem("username", username);
+                    //localStorage.setItem("password", password);
                     localStorage.setItem("url", url);
+                    localStorage.setItem("page", page);
                     
                     app.mobileApp.navigate("tpView/view.html");
                 }
@@ -116,8 +121,8 @@ app.settingsView = kendo.observable({
         //****************** On cancel button click ******************        
         cancel: function () {
             //Reset user values
-            $('#settingUsername').val("").change();
-            $('#settingPassword').val("").change();
+            //$('#settingUsername').val("").change();
+            //$('#settingPassword').val("").change();
             $('#settingUrl').val("").change();
 
         },
@@ -125,8 +130,8 @@ app.settingsView = kendo.observable({
         reset: function () {
             //Reset user values
             navigator.notification.alert("All settings cleared",""," ");
-            $('#settingUsername').val("").change();
-            $('#settingPassword').val("").change();
+            //$('#settingUsername').val("").change();
+            //$('#settingPassword').val("").change();
             $('#settingUrl').val("").change();
             localStorage.clear();
 
