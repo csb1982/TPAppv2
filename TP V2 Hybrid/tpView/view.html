@@ -1,4 +1,4 @@
-<div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
+<div data-role="view" data-title="TouchPoint Notifications" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
     <div class="scroll-wrapper">
         <div id="loading">
             <p>
@@ -11,10 +11,10 @@
             <input id="password" type="text" name="password" value="" />
         </form>
 
-            <h3 id="noSettings">No Touchpoint settings saved, please go back to the settings page and enter the Touchpont settings</h3>
-            <button id="settingBT" data-role="button" data-bind="events: { click: tpViewModel.submit }">Settings</button>
+            <h3 id="noSettings" style="display:none">No TouchPoint settings saved, please go back to the Settings page and enter the TouchPont settings</h3>
+            <button id="settingBT" data-role="button" data-bind="events: { click: tpViewModel.submit }" style="display:none">Settings</button>
 
-        <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch;">
+        <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch; ">
         </iframe>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -31,12 +31,9 @@
                             break;
                     }
                 }
-
                 window.addEventListener('orientationchange', doOnOrientationChange);
-
                 // Initial execution if needed
                 doOnOrientationChange();
-
             });
 
             function submitform() {
@@ -45,14 +42,9 @@
                 //document.getElementById('tpForm').contentWindow.location.reload();
                 // Hide no settings message
                 document.getElementById("noSettings").style.display = "none";
-                /*
-                var loading = setTimeout(function () {
-                    document.getElementById('tpForm').submit();
-                }, 2000);
-                */
                 var loading = setTimeout(function () {
                     document.getElementById('loading').style.display = "none";
-                }, 5000);
+                }, 10000);
             }
         </script>
     </div>

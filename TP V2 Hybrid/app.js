@@ -54,6 +54,9 @@ var iOSNotificationReceived = function (args) {
     if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
 
         location = 'tpView/view.html';
+    } else {
+        alert("Setting this as first time");
+        localStorage.setItem("firstTime", "1");
     }
 
     var app = {

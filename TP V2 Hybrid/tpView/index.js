@@ -6,6 +6,9 @@ app.tpView = kendo.observable({
         document.getElementById('tpFrame').style.display = "none";
         // Hide loading image
         document.getElementById('loading').style.display = "none";
+        // Hide settings button
+        document.getElementById('settingBT').style.display = "none";
+        document.getElementById('noSettings').style.display = "none";
 
         // Check for stored user data on device
         if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
@@ -24,8 +27,10 @@ app.tpView = kendo.observable({
             document.getElementById('loading').style.display = "initial";
             // Hide settings button
             document.getElementById('settingBT').style.display = "none";
-            
+
         } else {
+            document.getElementById('settingBT').style.display = "initial";
+            document.getElementById('noSettings').style.display = "initial";
             // Hide form
             document.getElementById('tpForm').style.display = "none";
             //Select data source to transport
@@ -51,7 +56,6 @@ app.tpView = kendo.observable({
                 if (c > 0) {
                     var result = datasourcedata[0].url;
                     if (result.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
-
                         var username = datasourcedata[0].username;
                         var password = datasourcedata[0].password;
                         var url = datasourcedata[0].url;
@@ -65,8 +69,7 @@ app.tpView = kendo.observable({
                         document.getElementById("username").value = username;
                         document.getElementById("password").value = password;
                         document.getElementById("site").value = page;
-
-
+                        
                         submitform();
                         submitform();
                         // Show iframe
@@ -77,12 +80,12 @@ app.tpView = kendo.observable({
                         document.getElementById('settingBT').style.display = "none";
 
                     } else {
-                        navigator.notification.alert("Url does not match site address","","");
+                        navigator.notification.alert("Url does not match site address", "", " ");
                         app.mobileApp.navigate("settingsView/view.html");
                     }
 
                 } else {
-                    navigator.notification.alert("No data stored. Please complete the Welcome wizard","","");
+                    navigator.notification.alert("No data stored. Please complete the Welcome wizard", "", " ");
                     app.mobileApp.navigate("wizardView/view.html");
                 }
 

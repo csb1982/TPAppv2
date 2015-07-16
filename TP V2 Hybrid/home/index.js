@@ -40,7 +40,7 @@ app.home = kendo.observable({
             password: '',
             username: '',
             email: '',
-            url: '',
+            url: 'https://eclipsetouchpoint.co.uk/',
         },
 
         //**********************
@@ -51,11 +51,11 @@ app.home = kendo.observable({
             var email = settingsViewModel.fields.email;
             var url = settingsViewModel.fields.url;
             if (!username) {
-                navigator.notification.alert("Username is required.", "", "");
+                navigator.notification.alert("Username is required.", "", " ");
                 return;
             }
             if (!password) {
-                navigator.notification.alert("Password is required.", "", "");
+                navigator.notification.alert("Password is required.", "", " ");
                 return;
             }
             if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
@@ -73,12 +73,16 @@ app.home = kendo.observable({
             */
             // If first time get user to register
             if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
-
-                el.Users.register(username, password, {
+                if (!url) {
+                    navigator.notification.alert("TouchPoint URL is required.", "", " ");
+                    return;
+                }
+                if (url.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
+                                    el.Users.register(username, password, {
                         Email: email
                     },
                     function () {
-                        navigator.notification.alert("Your account was successfully created.", "", "");
+                        navigator.notification.alert("Your account was successfully created.", "", " ");
                         el.Users.login(username, password,
                             function (data) {
                                 //Select data source to transport
@@ -107,7 +111,7 @@ app.home = kendo.observable({
                                         var password1 = datasourcedata[0].password;
                                         var url1 = datasourcedata[0].url;
                                         var page1 = url.substring(url.lastIndexOf('/') + 1);
-
+										// Send to TP View
                                         app.mobileApp.navigate("tpView/view.html");
 
                                     } else {
@@ -123,24 +127,29 @@ app.home = kendo.observable({
 
                                             localStorage.setItem("firstTime", "");
                                         }
-                                        navigator.notification.alert("TouchPoint Settings have been created", "", "");
+                                        //navigator.notification.alert("TouchPoint Settings have been created", "", " ");
                                         app.mobileApp.navigate("tpView/view.html");
-
                                     }
 
                                 });
                                 dataSource.read();
                             },
                             function () {
-                                navigator.notification.alert("Unfortunately we could not find your account.", "", "");
+                            	navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", "", " ");
                             });
                     },
                     function () {
-                        navigator.notification.alert("Unfortunately we were unable to create your account.", "", "");
+                        navigator.notification.alert("Unfortunately we were unable to create your account with those details.", "", " ");
                     });
-                //end register
-            } else {
 
+                } else {
+                    navigator.notification.alert("Url does not match site address", "", " ");
+                    return;
+                }
+
+            //end register
+            } else {
+                //Else Login
                 el.Users.login(username, password,
                     function (data) {
                         //Select data source to transport
@@ -165,10 +174,10 @@ app.home = kendo.observable({
                             if (c > 0) {
                                 // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
                                 // Set values from backend service
-                                var username1 = datasourcedata[0].username;
-                                var password1 = datasourcedata[0].password;
+                                //var username1 = datasourcedata[0].username;
+                                //var password1 = datasourcedata[0].password;
                                 var url1 = datasourcedata[0].url;
-                                var page1 = url.substring(url.lastIndexOf('/') + 1);
+                                var page1 = url1.substring(url1.lastIndexOf('/') + 1);
 
                                 app.mobileApp.navigate("tpView/view.html");
 
@@ -184,20 +193,19 @@ app.home = kendo.observable({
                                 if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
 
                                     localStorage.setItem("firstTime", "");
-                                }                                
-                                navigator.notification.alert("TouchPoint Settings have been created", "", "");
+                                }
+                                navigator.notification.alert("TouchPoint Settings have been created", "", " ");
                                 app.mobileApp.navigate("tpView/view.html");
-
                             }
-
                         });
                         dataSource.read();
+
                     },
                     function () {
-                        navigator.notification.alert("Unfortunately we could not find your account.", "", "");
+                        navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", "", " ");
                     });
-                // Else end
-            }
+                
+            }// Else Login End
 
 
             /*

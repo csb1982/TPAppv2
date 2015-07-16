@@ -4,8 +4,6 @@ app.settingsView = kendo.observable({
     onShow: function () {}
 });
 (function (parent) {
-    
-    
 
     //Backend api key
     var apiKey = "SjYFsW3FKM9zpUQ2";
@@ -19,33 +17,32 @@ app.settingsView = kendo.observable({
         }
     });
 
-    var settingsViewModel = kendo.observable({
+    var cViewModel = kendo.observable({
         fields: {
             password: '',
             username: '',
-            url: '',
+            url: 'https://eclipsetouchpoint.co.uk/',
         },
         //****************** On save button click ******************
         submit: function () {
             var saved = 0;
 
-
             // Set Setting values from user input
-            var username = settingsViewModel.fields.username;
-            var password = settingsViewModel.fields.password;
-            var url = settingsViewModel.fields.url;
+            var username = cViewModel.fields.username;
+            var password = cViewModel.fields.password;
+            var url = cViewModel.fields.url;
 
             // Check settings for been inputted 
             if (!username) {
-                navigator.notification.alert("Username is required.","","");
+                navigator.notification.alert("Username is required.",""," ");
                 return;
             }
             if (!password) {
-                navigator.notification.alert("Password is required.","","");
+                navigator.notification.alert("Password is required.",""," ");
                 return;
             }
             if (!url) {
-                navigator.notification.alert("Url is required.","","");
+                navigator.notification.alert("Url is required.",""," ");
                 return;
             }
 
@@ -53,7 +50,6 @@ app.settingsView = kendo.observable({
             dataSource.fetch(function () {
                 var datasourcedata = dataSource.data();
                 var c = 0;
-
 
                 // iterate through all data
                 for (var i = 0; i < datasourcedata.length; i++) {
@@ -70,12 +66,21 @@ app.settingsView = kendo.observable({
 
                     var item3 = dataSource.data()[0];
                     item3.set('url', url);
+                    
+                    var page = url.substring(url.lastIndexOf('/') + 1);
 
                     //Sync data source
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been saved","","");
+                    navigator.notification.alert("Settings have been saved",""," ");
                     saved = 1;
+                    
+                    // Set local storage with database data
+                    localStorage.setItem("username", username);
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("url", url);
+                    localStorage.setItem("page", page);
+                    
                     app.mobileApp.navigate("tpView/view.html");
                 }
                 //Else add new data
@@ -87,42 +92,46 @@ app.settingsView = kendo.observable({
                     });
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been updated","","");
+                    navigator.notification.alert("Settings have been updated",""," ");
                     saved = 1;
+                    
+                    // Set local storage with new data
+                    localStorage.setItem("username", username);
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("url", url);
+                    
                     app.mobileApp.navigate("tpView/view.html");
                 }
 
             });
-
-
             // If haven't saved data, send back to login screen.
             var interval = setTimeout(function () {
                 if (saved == 0) {
-                    navigator.notification.alert("Unfortunately we could not find your account.","","");
+                    navigator.notification.alert("Unfortunately we could not find your account.",""," ");
                     app.mobileApp.navigate("home/view.html");
                 }
-            }, 5000);
+            }, 10000);
 
         },
         //****************** On cancel button click ******************        
         cancel: function () {
             //Reset user values
-            $('#username').val("").change();
-            $('#password').val("").change();
-            $('#url').val("").change();
+            $('#settingUsername').val("").change();
+            $('#settingPassword').val("").change();
+            $('#settingUrl').val("").change();
 
         },
         //****************** On reset button click ******************        
         reset: function () {
             //Reset user values
-            navigator.notification.alert("All settings cleared","","");
-            $('#username').val("").change();
-            $('#password').val("").change();
-            $('#url').val("").change();
+            navigator.notification.alert("All settings cleared",""," ");
+            $('#settingUsername').val("").change();
+            $('#settingPassword').val("").change();
+            $('#settingUrl').val("").change();
             localStorage.clear();
 
         },
     });
 
-    parent.set('settingsViewModel', settingsViewModel);
+    parent.set('cViewModel', cViewModel);
 })(app.settingsView);

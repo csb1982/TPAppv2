@@ -5,7 +5,7 @@ app.wizardView = kendo.observable({
 });
 
 (function (parent) {
-localStorage.setItem("firstTime", "1");
+
     //Select data source to transport
     var dataSource = new kendo.data.DataSource({
         type: "everlive",
