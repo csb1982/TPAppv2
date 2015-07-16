@@ -14,7 +14,7 @@
             <h3 id="noSettings" style="display:none">No TouchPoint settings saved, please go back to the Settings page and enter the TouchPont settings</h3>
             <button id="settingBT" data-role="button" data-bind="events: { click: tpViewModel.submit }" style="display:none">Settings</button>
 
-        <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch; ">
+        <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch; visibility:hidden;" onload="this.style.visibility = 'visible';">
         </iframe>
         <script type="text/javascript">
             $(document).ready(function () {
