@@ -32,6 +32,7 @@ app.tpView = kendo.observable({
             document.getElementById('settingBT').style.display = "none";
 
         } else {
+
             //document.getElementById('settingBT').style.display = "initial";
             //document.getElementById('noSettings').style.display = "initial";
             //document.getElementById('noSettings').style.color = "#ccc";
@@ -47,9 +48,10 @@ app.tpView = kendo.observable({
                 }
             });
 
-            //Fetch data from Backend
 
+            //Fetch data from Backend
             DataSource.fetch(function () {
+                localStorage.setItem("tp", "1");
                 var datasourcedata = DataSource.data();
                 var c = 0;
 
@@ -60,9 +62,8 @@ app.tpView = kendo.observable({
 
                 //Check if values are stored within background service and are of eclipse format
                 if (c > 0) {
-
-                    document.getElementById('settingBT').style.display = "none";
-                    document.getElementById('noSettings').style.display = "none";
+                    // document.getElementById('settingBT').style.display = "none";
+                    // document.getElementById('noSettings').style.display = "none";
                     var result = datasourcedata[0].url;
                     if (result.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
                         var username = datasourcedata[0].username;
@@ -74,7 +75,6 @@ app.tpView = kendo.observable({
                         localStorage.setItem("password", password);
                         localStorage.setItem("url", url);
                         localStorage.setItem("page", page);
-                        localStorage.setItem("tp", "on");
 
                         document.getElementById("username").value = username;
                         document.getElementById("password").value = password;
@@ -90,7 +90,6 @@ app.tpView = kendo.observable({
                         document.getElementById('settingBT').style.display = "none";
                         document.getElementById('noSettings').style.display = "none";
 
-
                     } else {
                         navigator.notification.alert("Url does not match site address", "", " ");
                         app.mobileApp.navigate("settingsView/view.html");
@@ -102,20 +101,22 @@ app.tpView = kendo.observable({
                 }
 
             });
-
-            // Hide settings button and description. 
-            var interval = setTimeout(function () {
-                if (localStorage.getItem("tp") !== "1") {
-                    document.getElementById('settingBT').style.display = "initial";
-                    document.getElementById('noSettings').style.display = "initial";
-                    localStorage.setItem("tp", "");
-                }
-            }, 500);
+            DataSource.read();
 
 
         }
+        // Hide settings button and description. 
+        var interval = setTimeout(function () {
 
+            if (localStorage.getItem("tp") !== "1") {
+                var e = localStorage.getItem("test");
+                document.getElementById('settingBT').style.display = "initial";
+                document.getElementById('noSettings').style.display = "initial";
+                localStorage.setItem("tp", "");
+            }
+        }, 500);
     }
+
 });
 
 

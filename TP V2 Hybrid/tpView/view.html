@@ -39,14 +39,15 @@
 
             function submitform() {
                 document.getElementById('tpForm').submit();
-
                 //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
                 //document.getElementById('tpForm').contentWindow.location.reload();
                 // Hide no settings message
                 document.getElementById("noSettings").style.display = "none";
                 var loading = setTimeout(function () {
-                    document.getElementById('loading').style.display = "none";
-                }, 10000);
+                   document.getElementById('loading').style.display = "none";
+                   document.getElementById('settingBT').style.display = "none";
+                   document.getElementById('noSettings').style.display = "none";
+                }, 8000);
             }
         </script>
     </div>
