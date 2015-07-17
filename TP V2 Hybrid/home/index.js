@@ -50,12 +50,17 @@ app.home = kendo.observable({
             var password = settingsViewModel.fields.password;
             var email = settingsViewModel.fields.email;
             var url = settingsViewModel.fields.url;
+            
+            function alertDismissed() {
+        // do something
+    }
+            
             if (!username) {
-                navigator.notification.alert("Username is required.", "", " ");
+                navigator.notification.alert("Username is required.",alertDismissed," ");
                 return;
             }
             if (!password) {
-                navigator.notification.alert("Password is required.", "", " ");
+                navigator.notification.alert("Password is required.", alertDismissed, " ");
                 return;
             }
             if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
@@ -74,7 +79,7 @@ app.home = kendo.observable({
             // If first time get user to register
             if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
                 if (!url) {
-                    navigator.notification.alert("TouchPoint URL is required.", "", " ");
+                    navigator.notification.alert("TouchPoint URL is required.", alertDismissed, " ");
                     return;
                 }
                 if (url.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
@@ -82,7 +87,7 @@ app.home = kendo.observable({
                         Email: email
                     },
                     function () {
-                        navigator.notification.alert("Your account was successfully created.", "", " ");
+                        navigator.notification.alert("Your account was successfully created.", alertDismissed, " ");
                         el.Users.login(username, password,
                             function (data) {
                                 //Select data source to transport
@@ -135,15 +140,15 @@ app.home = kendo.observable({
                                 dataSource.read();
                             },
                             function () {
-                            	navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", "", " ");
+                            	navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", alertDismissed, " ");
                             });
                     },
                     function () {
-                        navigator.notification.alert("Unfortunately we were unable to create your account with those details.", "", " ");
+                        navigator.notification.alert("Unfortunately we were unable to create your account with those details.", alertDismissed, " ");
                     });
 
                 } else {
-                    navigator.notification.alert("Url does not match site address", "", " ");
+                    navigator.notification.alert("Url does not match site address", alertDismissed, " ");
                     return;
                 }
 
@@ -194,7 +199,7 @@ app.home = kendo.observable({
 
                                     localStorage.setItem("firstTime", "");
                                 }
-                                navigator.notification.alert("TouchPoint Settings have been created", "", " ");
+                                navigator.notification.alert("TouchPoint Settings have been created", alertDismissed, " ");
                                 app.mobileApp.navigate("tpView/view.html");
                             }
                         });
@@ -202,7 +207,7 @@ app.home = kendo.observable({
 
                     },
                     function () {
-                        navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", "", " ");
+                        navigator.notification.alert("Unfortunately those login details were incorrect. Be sure you're using the login details for your TouchPoint account.", alertDismissed, " ");
                     });
                 
             }// Else Login End
@@ -223,17 +228,14 @@ app.home = kendo.observable({
                                     typeName: "userSettings"
                                 }
                             });
-
                             //Fetch data from Backend
                             dataSource.fetch(function () {
                                 var datasourcedata = dataSource.data();
                                 var c = 0;
-
                                 // iterate through all data
                                 for (var i = 0; i < datasourcedata.length; i++) {
                                     c++;
                                 }
-
                                 //If data send to tp view
                                 if (c > 0) {
                                     // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
@@ -242,9 +244,7 @@ app.home = kendo.observable({
                                     var password1 = datasourcedata[0].password;
                                     var url1 = datasourcedata[0].url;
                                     var page1 = url.substring(url.lastIndexOf('/') + 1);
-
                                     app.mobileApp.navigate("tpView/view.html");
-
                                 } else {
                                     // Add user settings to database
                                     dataSource.add({
@@ -257,11 +257,9 @@ app.home = kendo.observable({
                                     navigator.notification.alert("TouchPoint Settings have been created", "", "");
                                     app.mobileApp.navigate("tpView/view.html");
                                     if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
-
                                         localStorage.setItem("firstTime", "");
                                     }
                                 }
-
                             });
                             dataSource.read();
                         },
@@ -285,3 +283,4 @@ app.home = kendo.observable({
 
     parent.set('settingsViewModel', settingsViewModel);
 })(app.home);
+

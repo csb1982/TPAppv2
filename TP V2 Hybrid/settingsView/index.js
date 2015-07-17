@@ -26,7 +26,9 @@ app.settingsView = kendo.observable({
         //****************** On save button click ******************
         submit: function () {
             var saved = 0;
-
+function alertDismissed() {
+    
+}
             // Set Setting values from user input
             //var username = cViewModel.fields.username;
             //var password = cViewModel.fields.password;
@@ -44,7 +46,7 @@ app.settingsView = kendo.observable({
             }
             */
             if (!url) {
-                navigator.notification.alert("Url is required.",""," ");
+                navigator.notification.alert("Url is required.",alertDismissed," ");
                 return;
             }
 
@@ -76,7 +78,7 @@ app.settingsView = kendo.observable({
                     //Sync data source
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been saved",""," ");
+                    navigator.notification.alert("Settings have been saved",alertDismissed," ");
                     saved = 1;
                     
                     // Set local storage with database data
@@ -96,7 +98,7 @@ app.settingsView = kendo.observable({
                     });
                     dataSource.one("sync", this.close);
                     dataSource.sync();
-                    navigator.notification.alert("Settings have been updated",""," ");
+                    navigator.notification.alert("Settings have been updated",alertDismissed," ");
                     saved = 1;
                     
                     // Set local storage with new data
@@ -112,7 +114,7 @@ app.settingsView = kendo.observable({
             // If haven't saved data, send back to login screen.
             var interval = setTimeout(function () {
                 if (saved == 0) {
-                    navigator.notification.alert("Unfortunately we could not find your account.",""," ");
+                    navigator.notification.alert("Unfortunately we could not find your account.",alertDismissed," ");
                     app.mobileApp.navigate("home/view.html");
                 }
             }, 10000);

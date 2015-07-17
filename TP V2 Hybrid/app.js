@@ -64,42 +64,10 @@ var iOSNotificationReceived = function (args) {
             //app.receivedEvent('deviceready');
             navigator.splashscreen.hide();
 
-
-            //test
-            //var variableNameInput = document.getElementById("variableNameInput"),
-            //valueInput = document.getElementById("valueInput");
-
-            //localStorage.setItem("key", "value1");
-            //var value = localStorage.getItem("key");
-
-            /*
-                        if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
-                            //var result = localStorage.getItem("key");
-                            //alert("In result = " + result);
-
-
-                            var username = localStorage.getItem("username");
-                            var password = localStorage.getItem("password");
-                            var url = localStorage.getItem("url");
-                            var page = localStorage.getItem("page");
-
-                            alert("In result = " + username+ " " +password+ " " +url+ " "+page);
-                           // app.mobileApp.navigate("tpView/view.html");
-                            //location = "tpView/view.html";
-                            //location = "home/view.html";
-
-                        }
-            */
-
-            //alert(value);
-
-
-            //test end
-
             //**********************************************************
             /* disable notifications so can test in browser
              */
-            
+            /*
            
             var everlive = new Everlive({
                 apiKey: 'SjYFsW3FKM9zpUQ2', // Telerik API key
@@ -135,7 +103,7 @@ var iOSNotificationReceived = function (args) {
                     navigator.notification.alert("Unfortunately we could register your device for push notifications");
                 }
             );
-            
+            */
             //End
         },
     };

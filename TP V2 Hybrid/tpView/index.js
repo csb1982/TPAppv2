@@ -51,6 +51,9 @@ app.tpView = kendo.observable({
 
             //Fetch data from Backend
             DataSource.fetch(function () {
+                function alertDismissed() {
+                    
+                }
                 localStorage.setItem("tp", "1");
                 var datasourcedata = DataSource.data();
                 var c = 0;
@@ -91,18 +94,17 @@ app.tpView = kendo.observable({
                         document.getElementById('noSettings').style.display = "none";
 
                     } else {
-                        navigator.notification.alert("Url does not match site address", "", " ");
+                        navigator.notification.alert("Url does not match site address", alertDismissed, " ");
                         app.mobileApp.navigate("settingsView/view.html");
                     }
 
                 } else {
-                    navigator.notification.alert("No data stored. Please complete the Welcome wizard", "", " ");
+                    navigator.notification.alert("No data stored. Please complete the Welcome wizard", alertDismissed, " ");
                     app.mobileApp.navigate("wizardView/view.html");
                 }
 
             });
             DataSource.read();
-
 
         }
         // Hide settings button and description. 
@@ -114,7 +116,7 @@ app.tpView = kendo.observable({
                 document.getElementById('noSettings').style.display = "initial";
                 localStorage.setItem("tp", "");
             }
-        }, 500);
+        }, 1500);
     }
 
 });

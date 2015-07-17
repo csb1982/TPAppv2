@@ -256,23 +256,21 @@ margin: 0 auto;
 }
 
 .TouchPoint_Logo_Welcome {
-    width:250px !important;
+    width:180px !important;
     margin:auto !important;
      text-align: center !important;
 }
 
 #Welcome_Container {
-      display: table-cell !important; 
+     display: table-cell !important; 
     vertical-align: middle !important;
-    height:100vh !important;
-    width:100% !important;
-    margin: 0 auto; 
+ height:85vh !important;
     text-align: center; 
-    padding:20px;
+    padding:0px 20px 0px 20px;
 }
 
 #Main_Container {
-     height:100vh !important;
+     height:90vh !important;
     width:100%;
     margin: 0 auto; 
     text-align: center; 
