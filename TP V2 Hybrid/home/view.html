@@ -5,13 +5,13 @@
                 <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
                 </div>
                 <li class="Input_login">
-                    <input class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text" autocorrect="off" autocapitalize="none">
+                    <input id="loginUsername" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text" autocorrect="off" autocapitalize="none">
                 </li>
                 <li class="Input_login">
-                    <input class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
+                    <input id="loginPassword" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
                 </li>
                 <li id="email" class="Input_login">
-                    <input  class="Input_Style" data-bind="value: settingsViewModel.fields.email" placeholder="Email" type="email">
+                    <input  id="loginEmail" class="Input_Style" data-bind="value: settingsViewModel.fields.email" placeholder="Email" type="email">
                 </li>
                 <li id="url" class="Input_login">
                     <input  class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="TouchPoint URL" type="url">

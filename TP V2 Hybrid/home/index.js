@@ -3,19 +3,28 @@
 app.home = kendo.observable({
     onShow: function (e) {
         $("#appDrawer").data("kendoMobileDrawer").hide();
-
+        
+       
         // Check its first time for the user if so change login view to a register view.
+        //if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
         if (localStorage.getItem("firstTime") != undefined && localStorage.getItem("firstTime") == "1") {
             $("#email").show();
             $("#url").show();
             $("#loginBT").val("Register");
             $("#Bottom_Login_Buttons2").hide();
             //localStorage.setItem("firstTime", "");
+            // Clear values from screen
+            $("#loginUsername").val("");
+            $("#loginPassword").val("");
+            $("#loginEmail").val("");
         } else {
             $("#email").hide();
             $("#url").hide();
             $("#Bottom_Login_Buttons2").show();
             $("#loginBT").val("Login");
+            // Clear values from screen
+            $("#loginUsername").val("");
+            $("#loginPassword").val("");
             //$("#login").data("kendoMobileNavBar").title("MyCustomTitle");           
 
         }
@@ -86,6 +95,7 @@ app.home = kendo.observable({
                                     el.Users.register(username, password, {
                         Email: email
                     },
+                                                    
                     function () {
                         navigator.notification.alert("Your account was successfully created.", alertDismissed, " ");
                         el.Users.login(username, password,
@@ -154,6 +164,7 @@ app.home = kendo.observable({
 
             //end register
             } else {
+                
                 //Else Login
                 el.Users.login(username, password,
                     function (data) {

@@ -2,6 +2,7 @@
 
 app.tpView = kendo.observable({
     onShow: function () {
+        
         // Set iframe visibility to hidden to stop iframe flash
         document.getElementById('tpFrame').style.visibility = "hidden";
         // Hide iframe
@@ -23,21 +24,16 @@ app.tpView = kendo.observable({
             document.getElementById("password").value = password;
             document.getElementById("site").value = page;
 
-            submitform();
+            submitform(url);
             // Show iframe
             document.getElementById('tpFrame').style.display = "initial";
             // Show loading image
             document.getElementById('loading').style.display = "initial";
             // Hide settings button
             document.getElementById('settingBT').style.display = "none";
-
+		
         } else {
-
-            //document.getElementById('settingBT').style.display = "initial";
-            //document.getElementById('noSettings').style.display = "initial";
-            //document.getElementById('noSettings').style.color = "#ccc";
-            //document.getElementById('settingBT').style.color = "#fff";
-            //document.getElementById('settingBT').style.background = "#01579b";
+			
             // Hide form
             document.getElementById('tpForm').style.display = "none";
             //Select data source to transport
@@ -47,7 +43,6 @@ app.tpView = kendo.observable({
                     typeName: "userSettings"
                 }
             });
-
 
             //Fetch data from Backend
             DataSource.fetch(function () {
@@ -73,7 +68,6 @@ app.tpView = kendo.observable({
                         var password = datasourcedata[0].password;
                         var url = datasourcedata[0].url;
                         var page = url.substring(url.lastIndexOf('/') + 1);
-
                         localStorage.setItem("username", username);
                         localStorage.setItem("password", password);
                         localStorage.setItem("url", url);
@@ -83,8 +77,8 @@ app.tpView = kendo.observable({
                         document.getElementById("password").value = password;
                         document.getElementById("site").value = page;
 
-                        submitform();
-                        submitform();
+                        submitform(url);
+                        submitform(url);
                         // Show iframe
                         document.getElementById('tpFrame').style.display = "initial";
                         // Show loading image
@@ -92,7 +86,7 @@ app.tpView = kendo.observable({
                         // Hide settings button
                         document.getElementById('settingBT').style.display = "none";
                         document.getElementById('noSettings').style.display = "none";
-
+	
                     } else {
                         navigator.notification.alert("Url does not match site address", alertDismissed, " ");
                         app.mobileApp.navigate("settingsView/view.html");

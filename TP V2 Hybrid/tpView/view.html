@@ -5,7 +5,8 @@
                 <img src="loader-small.gif"> Loading...
             </p>
         </div>
-        <form id="tpForm" name="formvar" action="http://dotnetiis.eclipselegal.local:801/Eclipse" method="post" target="output_frame" style="display:none">
+        
+        <form id="tpForm" name="formvar" action="" method="post" target="output_frame" style="display:none">           
             <input id="site" type="text" name="siteID" value="" />
             <input id="username" type="text" name="userName" value="" />
             <input id="password" type="text" name="password" value="" />
@@ -37,7 +38,10 @@
                 doOnOrientationChange();
             });
 
-            function submitform() {
+            function submitform(url) {
+                // Set action for the iframe. Change from hardcoded value to url when going live
+				document.getElementById('tpForm').action = "http://dotnetiis.eclipselegal.local:801/Eclipse";
+
                 document.getElementById('tpForm').submit();
                 //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
                 //document.getElementById('tpForm').contentWindow.location.reload();

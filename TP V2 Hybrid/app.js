@@ -48,14 +48,13 @@ var iOSNotificationReceived = function (args) {
 (function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
-    
+
 	//Check for stored user data on device. If data log into TouchPoint  
     var location = 'wizardView/view.html';
     if (localStorage.getItem("username") != undefined && localStorage.getItem("password") != undefined && localStorage.getItem("url") != undefined && localStorage.getItem("page") != undefined) {
-
         location = 'tpView/view.html';
     } else {
-        localStorage.setItem("firstTime", "1");
+        localStorage.setItem("firstTime", "1");       
     }
 
     var app = {
