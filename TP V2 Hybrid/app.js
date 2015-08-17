@@ -109,6 +109,9 @@ var iOSNotificationReceived = function (args) {
 
     var bootstrap = function () {
         $(function () {
+            // Lower default yhreshold for detecting a user tap
+            kendo.UserEvents.defaultThreshold(20); 
+            
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 // comment out the following line to get a UI which matches the look
                 // and feel of the operating system
