@@ -1,9 +1,7 @@
 'use strict';
 
 app.registerView = kendo.observable({
-    onShow: function () {
-        
-
+    onShow: function () {  
     }
 });
 
@@ -64,12 +62,10 @@ app.registerView = kendo.observable({
         },
 
         login: function () {
-            alert("in login");
             var username = "c";
             var password = "c";
             el.Users.login(username, password,
                 function (data) {
-                    alert("logged in");
                     //*/**
 //app.mobileApp.navigate("home/view.html", "#id1=2");
                 

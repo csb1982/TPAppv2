@@ -6,9 +6,8 @@ app.settingsView = kendo.observable({
 
         if (localStorage.getItem("username") != undefined) {
             var usernamesd = localStorage.getItem("username");
-            alert("local");
         } else {
-            alert("NO local");
+
         }
 
 
