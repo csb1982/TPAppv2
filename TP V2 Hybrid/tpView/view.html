@@ -1,4 +1,4 @@
-<div data-role="view" data-title="TouchPoint Notifications" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
+<div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
     <div class="scroll-wrapper">
         <div id="loading">
             <p>
@@ -40,7 +40,7 @@
 
             function submitform(url) {
                 // Set action for the iframe. Change from hardcoded value to url when going live
-				document.getElementById('tpForm').action = "http://dotnetiis.eclipselegal.local:801/Eclipse";
+				document.getElementById('tpForm').action = "https://eclipsetouchpoint.co.uk/eclipselegal";
 
                 document.getElementById('tpForm').submit();
                 //document.getElementById('tpForm').src = document.getElementById('tpForm').src;

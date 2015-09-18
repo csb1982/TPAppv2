@@ -3,7 +3,7 @@
   "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
   "projectVersion": 1,
   "AppIdentifier": "com.healy.TelerikApp",
-  "DisplayName": "TouchPoint Notifications",
+  "DisplayName": "TouchPoint ",
   "Author": "CB",
   "Description": "This app is designed to register and receive notifications from TouchPoint",
   "BundleVersion": "4.1",

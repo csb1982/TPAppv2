@@ -66,12 +66,6 @@ app.registerView = kendo.observable({
             var password = "c";
             el.Users.login(username, password,
                 function (data) {
-                    //*/**
-//app.mobileApp.navigate("home/view.html", "#id1=2");
-                
-                
-                    //*/**
-
 
                 },
                 function () {
