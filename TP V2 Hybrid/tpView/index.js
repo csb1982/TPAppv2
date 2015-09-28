@@ -63,7 +63,7 @@ app.tpView = kendo.observable({
                     // document.getElementById('settingBT').style.display = "none";
                     // document.getElementById('noSettings').style.display = "none";
                     var result = datasourcedata[0].url;
-                    // Test for vaild url, changed to allow diffent addresses
+                    // Test for vaild url, changed to allow diffent addresses.
                     //if (result.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
                     if (result.indexOf("https://") >= 0) {
                         var username = datasourcedata[0].username;
