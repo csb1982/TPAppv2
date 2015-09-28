@@ -6,7 +6,7 @@
   "DisplayName": "TouchPoint ",
   "Author": "CB",
   "Description": "This app is designed to register and receive notifications from TouchPoint",
-  "BundleVersion": "4.1",
+  "BundleVersion": "4.2",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1",
