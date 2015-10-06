@@ -91,7 +91,7 @@ app.home = kendo.observable({
                     navigator.notification.alert("TouchPoint URL is required.", alertDismissed, " ");
                     return;
                 }
-                if (url.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
+                if (url.indexOf("https://") >= 0) {
                                     el.Users.register(username, password, {
                         Email: email
                     },
@@ -158,7 +158,7 @@ app.home = kendo.observable({
                     });
 
                 } else {
-                    navigator.notification.alert("Url does not match site address", alertDismissed, " ");
+                    navigator.notification.alert("Url does not match site address1", alertDismissed, " ");
                     return;
                 }
 
