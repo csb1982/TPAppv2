@@ -65,7 +65,11 @@ app.tpView = kendo.observable({
                     var result = datasourcedata[0].url;
                     // Test for vaild url, changed to allow diffent addresses.
                     //if (result.indexOf("https://eclipsetouchpoint.co.uk/") >= 0) {
-                    if (result.indexOf("https://") >= 0) {
+                    if (result.indexOf("http") >= 0) {
+                        var userID = datasourcedata[0].id
+                         document.getElementById("userID").value = userID;
+
+                        
                         var username = datasourcedata[0].username;
                         var password = datasourcedata[0].password;
                         var url = datasourcedata[0].url;

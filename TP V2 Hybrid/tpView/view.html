@@ -6,7 +6,8 @@
             </p>
         </div>
         
-        <form id="tpForm" name="formvar" action="" method="post" target="output_frame" style="display:none">           
+        <form id="tpForm" name="formvar" action="" method="post" target="output_frame" style="display:none">
+            <input id="userID" type="text" name="userID" value="" />
             <input id="site" type="text" name="siteID" value="" />
             <input id="username" type="text" name="userName" value="" />
             <input id="password" type="text" name="password" value="" />
@@ -41,7 +42,6 @@
             function submitform(url) {
                 // Set action for the iframe. Change from hardcoded value to url when going live
 				document.getElementById('tpForm').action = url;
-
                 document.getElementById('tpForm').submit();
                 //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
                 //document.getElementById('tpForm').contentWindow.location.reload();

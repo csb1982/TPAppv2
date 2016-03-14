@@ -108,8 +108,10 @@ app.home = kendo.observable({
                                     }
                                 });
 
+                            
                                 //Fetch data from Backend
                                 dataSource.fetch(function () {
+                                    console.log("HERE!!!!!!!!!!!!!!");
                                     var datasourcedata = dataSource.data();
                                     var c = 0;
 
@@ -117,9 +119,10 @@ app.home = kendo.observable({
                                     for (var i = 0; i < datasourcedata.length; i++) {
                                         c++;
                                     }
-
+console.log("HERE222222");
                                     //If data send to tp view
                                     if (c > 0) {
+                                        console.log("in if");
                                         // Call the instance of kendo.mobile.Application that was created in app.js bootstrap
                                         // Set values from backend service
                                         var username1 = datasourcedata[0].username;
@@ -130,6 +133,7 @@ app.home = kendo.observable({
                                         app.mobileApp.navigate("tpView/view.html");
 
                                     } else {
+                                        console.log("in else");
                                         // Add user settings to database
                                         dataSource.add({
                                             username: username,
@@ -294,4 +298,3 @@ app.home = kendo.observable({
 
     parent.set('settingsViewModel', settingsViewModel);
 })(app.home);
-

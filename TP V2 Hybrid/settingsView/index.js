@@ -1,6 +1,6 @@
 'use strict';
 
-app.settingsView = kendo.observable({
+   app.settingsView = kendo.observable({
     onShow: function () {
 
 
@@ -9,12 +9,11 @@ app.settingsView = kendo.observable({
         } else {
 
         }
-
-
     }
 });
-(function (parent) {
 
+(function (parent) {
+   
     //Backend api key
     var apiKey = "SjYFsW3FKM9zpUQ2";
     var el = new Everlive(apiKey);
@@ -60,16 +59,18 @@ app.settingsView = kendo.observable({
                 navigator.notification.alert("Url is required.", alertDismissed, " ");
                 return;
             }
-
+				//console.log("Craig");
             //Fetch data from Backend
             dataSource.fetch(function () {
-
+			
                 var datasourcedata = dataSource.data();
                 var c = 0;
-
+				
                 // iterate through all data
                 for (var i = 0; i < datasourcedata.length; i++) {
+                    
                     c++;
+                    
                 }
 
                 //If data exists, update data
