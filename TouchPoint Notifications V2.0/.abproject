@@ -1,0 +1,45 @@
+{
+  "ProjectName": "TouchPoint Notifications V2.0",
+  "ProjectGuid": "0213a0e9-a9b1-4997-aec4-fc03ed2f27d2",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.TouchPointNotificationsV20",
+  "DisplayName": "TouchPoint Notifications V2.0",
+  "Author": "",
+  "Description": "TouchPoint Notifications V2.0",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{a868c253-fab0-4580-ac78-c107922ab201}",
+  "WP8ProductID": "{c9aacd35-ee49-4e89-ae01-74cfc817ac5e}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.TouchPointNotificationsV20",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
