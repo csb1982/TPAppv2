@@ -9,41 +9,58 @@
           "type": "kendo-ui-mobile:form",
           "components": [
             {
-              "type": "kendo-ui-mobile:field",
-              "name": "username",
-              "title": "Username",
-              "inputType": "text",
-              "titlePosition": "top",
-              "inputTextType": "text",
-              "placeholder": "Type here ..."
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "password",
-              "title": "Password",
-              "inputType": "text",
-              "titlePosition": "top",
-              "inputTextType": "password",
-              "placeholder": "Type here ..."
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "emailAddress",
-              "title": "Email address",
-              "inputType": "text",
-              "titlePosition": "top",
-              "inputTextType": "email",
-              "placeholder": "Type here ..."
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "rememberMe",
-              "title": "Remember me",
-              "inputType": "checkbox"
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "username",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Username",
+                  "inputType": "text",
+                  "titlePosition": "top",
+                  "inputTextType": "text",
+                  "placeholder": "Type here ..."
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "password",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Password",
+                  "inputType": "text",
+                  "titlePosition": "top",
+                  "inputTextType": "password",
+                  "placeholder": "Type here ..."
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "emailAddress",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Email address",
+                  "inputType": "text",
+                  "titlePosition": "top",
+                  "inputTextType": "email",
+                  "placeholder": "Type here ..."
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "rememberMe",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Remember me",
+                  "inputType": "checkbox"
+                }
+              ],
+              "name": "homeModel1475243178185",
+              "formType": "add"
             }
           ],
           "name": "homeModel",
-          "submitButton": "Go for it!"
+          "enableDataBinding": false,
+          "submitButton": "Go for it!",
+          "cancelButton": "Cancel"
         }
       ],
       "title": "Napthens Notifications",

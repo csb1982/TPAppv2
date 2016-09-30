@@ -1,11 +1,7 @@
 'use strict';
-
-// Test
 function onPushNotificationReceived(e) {
     alert(JSON.stringify(e));
-
 };
-// test end
 
 (function () {
     var app = {
@@ -26,7 +22,6 @@ function onPushNotificationReceived(e) {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
 
-                // Test
                 var everlive = new Everlive({
                     appId: 'yxf3e7fkvkmpk563',
                     scheme: 'http' // switch this to 'https' if you'd like to use TLS/SSL encryption and if it is included in your subscription tier
@@ -54,15 +49,12 @@ function onPushNotificationReceived(e) {
                 }, function (err) {
                     alert("Error: " + err.message);
                 });
-                // Test End
             }
             bootstrap();
         }, false);
     } else {
         bootstrap();
     }
-
-
 
     app.keepActiveState = function _keepActiveState(item) {
         var currentItem = item;
@@ -92,8 +84,8 @@ function onPushNotificationReceived(e) {
         }
     };
 
-    // start kendo binders
-    // end kendo binders
+    /// start appjs functions
+    /// end appjs functions
     app.showFileUploadName = function (itemViewName) {
         $('.' + itemViewName).off('change', 'input[type=\'file\']').on('change', 'input[type=\'file\']', function (event) {
             var target = $(event.target),

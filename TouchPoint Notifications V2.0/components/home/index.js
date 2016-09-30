@@ -1,37 +1,42 @@
 'use strict';
 
 app.home = kendo.observable({
-    onShow: function () { },
-    afterShow: function () { }
+    onShow: function() {},
+    afterShow: function() {}
 });
 
 // START_CUSTOM_CODE_home
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 // END_CUSTOM_CODE_home
-(function (parent) {
-    var homeModel = kendo.observable({
-        fields: {
+(function(parent) {
+    var
+    /// start global model properties
+    /// end global model properties
+        homeModel = kendo.observable({
+        submit: function() {},
+        /// start add model functions
+        /// end add model functions
+
+        cancel: function() {}
+    });
+
+    /// start form functions
+    /// end form functions
+
+    parent.set('onShow', function _onShow() {
+        var that = parent;
+        that.set('addFormData', {
             rememberMe: '',
             emailAddress: '',
             password: '',
             username: '',
-        },
-        submit: function () {
-
-            console.log('form submitted');
-
-            $('#registerForm').fadeOut();
-
-            var url = 'https://demo.eclipsetouchpoint.co.uk/qatesting331';
-            
-            $('#iframeContainer').attr('src', url);
-            $('#iframeContainer').fadeIn();
-
-
-        }
+            /// start add form data init
+            /// end add form data init
+        });
+        /// start add form show
+        /// end add form show
     });
-
     parent.set('homeModel', homeModel);
 })(app.home);
 
