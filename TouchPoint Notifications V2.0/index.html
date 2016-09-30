@@ -9,14 +9,18 @@
 
     <link href="styles/overrides.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
+	<link href="styles/touchpoint.css" rel="stylesheet">
 
     <script src="cordova.js"></script>
+    <script src="https://bs-static.cdn.telerik.com/1.7.2/everlive.all.min.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/aboutView/index.js"></script>
+    <script src="components/touchPointSite/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
@@ -25,18 +29,7 @@
             </div>
         </header>
         <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home">Home View</a>
-            </div>
-            <div id="navigation-container-more" style="display: none">
-            </div>
         </footer>
-    </div>
-
-
-    <div id="navigation-show-more-view" data-role="view" data-title="Show More" data-layout="main">
-        <ul data-role="listview" data-style="inset" data-click="app.listViewClick">
-        </ul>
     </div>
 
     <div data-role="layout" data-id="main-nonav">

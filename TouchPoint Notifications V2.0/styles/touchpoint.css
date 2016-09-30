@@ -1,0 +1,19 @@
+.km-content {
+background: #c81648;
+background: -moz-linear-gradient(top,  #c81648 0%, #ab0534 100%);
+background: -webkit-linear-gradient(top,  #c81648 0%,#ab0534 100%);
+background: linear-gradient(to bottom,  #c81648 0%,#ab0534 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c81648', endColorstr='#ab0534',GradientType=0 );
+
+}
+
+.km-flat .km-navbar {
+    background-color: #ab0534;
+    color: #f7f7f7;
+}
+
+.logoHeader {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}

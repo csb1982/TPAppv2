@@ -4,20 +4,90 @@
     {
       "type": "kendo-ui-mobile:view",
       "name": "home",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "username",
+              "title": "Username",
+              "inputType": "text",
+              "titlePosition": "top",
+              "inputTextType": "text",
+              "placeholder": "Type here ..."
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "password",
+              "title": "Password",
+              "inputType": "text",
+              "titlePosition": "top",
+              "inputTextType": "password",
+              "placeholder": "Type here ..."
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "emailAddress",
+              "title": "Email address",
+              "inputType": "text",
+              "titlePosition": "top",
+              "inputTextType": "email",
+              "placeholder": "Type here ..."
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "rememberMe",
+              "title": "Remember me",
+              "inputType": "checkbox"
+            }
+          ],
+          "name": "homeModel",
+          "submitButton": "Go for it!"
+        }
+      ],
+      "title": "Napthens Notifications",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "touchPointSite",
       "components": [],
-      "title": "Home View",
+      "title": "TouchPointSite",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "aboutView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:about",
+          "name": "aboutViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "About",
       "addToNavigation": true,
-      "icon": "home"
+      "icon": "info"
     }
   ],
   "dataProviders": [],
   "name": "kendoUiMobileApp",
-  "navigation": "tabstrip",
+  "navigation": "none",
   "view": "home",
-  "transition": "slide",
-  "showMoreTab": true,
-  "skin": "nova",
-  "skinMainColor": "#32364c",
+  "skin": "flat",
+  "skinMainColor": "#1a1a1a",
   "skinTextColor": "#ffffff",
-  "skinAccentColor": "#ff4350"
+  "skinAccentColor": "#ab0534"
 }
