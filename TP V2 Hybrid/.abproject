@@ -1,0 +1,58 @@
+{
+  "ProjectName": "TP V2 Hybrid",
+  "ProjectGuid": "c7378f54-0d4d-4984-a57b-d064a3ca65e9",
+  "projectVersion": 1,
+  "AppIdentifier": "com.healy.TelerikApp",
+  "DisplayName": "TouchPoint ",
+  "Author": "CB",
+  "Description": "This app is designed to register and receive notifications from TouchPoint",
+  "BundleVersion": "4.5",
+  "AndroidVersionCode": "3",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [
+    "fetch",
+    "remote-notification"
+  ],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.8.0",
+  "AndroidPermissions": [
+    "android.permission.BROADCAST_PACKAGE_REMOVED",
+    "android.permission.BROADCAST_SMS",
+    "android.permission.INTERNET",
+    "android.permission.RECEIVE_MMS",
+    "android.permission.RECEIVE_SMS",
+    "android.permission.RECEIVE_WAP_PUSH"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{ae36a834-5f07-4a26-8ba9-944a9fc6bc3c}",
+  "WP8ProductID": "{f2129c6b-8806-4a1c-bbb0-4bb8e81214cb}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.TPV2Hybrid",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@2.5.5",
+    "org.apache.cordova.dialogs",
+    "org.apache.cordova.splashscreen"
+  ]
+}

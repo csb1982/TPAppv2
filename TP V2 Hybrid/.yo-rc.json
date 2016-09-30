@@ -1,0 +1,20 @@
+{
+  "dependsOn": [
+    "generator-kendo-ui-mobile@0.0.6"
+  ],
+  "generator-kendo-ui-mobile": {
+    "cleanup": [
+      "./home",
+      "./settingsView",
+      "./aboutView",
+      "./contactView",
+      "./touchPointView",
+      "./testView",
+      "./tpView",
+      "./registerView",
+      "./resetView",
+      "./wizardView",
+      "./touchpointView"
+    ]
+  }
+}

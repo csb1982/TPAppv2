@@ -1,0 +1,8 @@
+{
+  "CordovaPluginVariables": {},
+  "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@2.5.5",
+    "org.apache.cordova.dialogs",
+    "org.apache.cordova.splashscreen"
+  ]
+}

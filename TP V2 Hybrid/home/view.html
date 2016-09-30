@@ -1,0 +1,43 @@
+<div id="login" data-role="view" data-title="Login" data-layout="main" data-model="app.home" data-show="app.home.onShow">
+    <div id="settingsViewModel" class="form-view">
+        <form id="Middle_Form">
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <div class="TouchPoint_Logo_Small"><img src="TouchPoint-Logo-small.png" />
+                </div>
+                <li class="Input_login">
+                    <input id="loginUsername" class="Input_Style" data-bind="value: settingsViewModel.fields.username" placeholder="Username" type="text" autocorrect="off" autocapitalize="none">
+                </li>
+                <li class="Input_login">
+                    <input id="loginPassword" class="Input_Style" data-bind="value: settingsViewModel.fields.password" placeholder="Password" type="password">
+                </li>
+                <li id="email" class="Input_login">
+                    <input  id="loginEmail" class="Input_Style" data-bind="value: settingsViewModel.fields.email" placeholder="Email" type="email">
+                </li>
+                <li id="url" class="Input_login">
+                    <input  class="Input_Style" data-bind="value: settingsViewModel.fields.url" placeholder="Company ID" type="url">
+                </li>                
+                <input id="loginBT" class="submitBT" data-bind="events: { click: settingsViewModel.submit }" value="Login" readonly >
+            </ul>
+            <div class="button-group">
+                <!--
+                <a class="km-state-active" id="View_Login_Button" data-bind="events: { click: settingsViewModel.submit }">Login</a>
+                -->
+            </div>
+        </form>
+    </div>
+    <div data-role="footer" style="background:#313d4c;">
+        <div class="button-group" id="Bottom_Buttons">
+            <a class="km-state-active" id="Bottom_Login_Buttons2" data-role="button" data-bind="events: { click: settingsViewModel.reset }">Forgot your password?</a>
+        </div>
+    </div>
+    <!--Use device keyboard enter click to simulate button click-->
+    <script>
+        $("#login input").keyup(function (e) { //inputs on login view should call submit on 'enter'
+            if (e.keyCode === 13) {
+                $('#loginBT').trigger('click');
+                $(this).blur(); //iOS likes to keep the keyboard open ... so remove focus to close it
+            }
+        });
+        
+    </script>
+</div>

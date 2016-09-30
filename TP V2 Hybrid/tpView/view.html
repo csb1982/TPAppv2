@@ -1,0 +1,60 @@
+<div data-role="view" data-title="TouchPoint" data-layout="main" data-model="app.tpView" data-show="app.tpView.onShow" data-reload="true">
+    <div class="scroll-wrapper">
+        <div id="loading">
+            <p>
+                <img src="loader-small.gif"> Loading...
+            </p>
+        </div>
+        
+        <form id="tpForm" name="formvar" action="" method="post" target="output_frame" style="display:none">
+            <input id="userID" type="text" name="userID" value="" />
+            <input id="site" type="text" name="siteID" value="" />
+            <input id="username" type="text" name="userName" value="" />
+            <input id="password" type="text" name="password" value="" />
+        </form>
+
+            <h3 id="noSettings" >No TouchPoint settings saved, please go back to the Settings page and enter the TouchPont settings</h3>
+            <button id="settingBT" data-role="button" data-bind="events: { click: tpViewModel.submit }" >Settings</button>
+
+
+        <iframe id="tpFrame" name="output_frame" src="" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch; visibility:hidden; border:none;" onload="this.style.visibility = 'visible';">
+        </iframe>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var h = $(window).height();
+                // Check and change iframe depending on orientation
+                function doOnOrientationChange() {
+                    switch (window.orientation) {
+                        case -90:
+                        case 90:
+                            document.getElementById('tpFrame').height = (h) + "px";
+                            break;
+                        default:
+                            document.getElementById('tpFrame').height = (h) + "px";
+                            break;
+                    }
+                }
+                window.addEventListener('orientationchange', doOnOrientationChange);
+                // Initial execution if needed
+                doOnOrientationChange();
+            });
+
+            function submitform(url) {
+                // Set action for the iframe. Change from hardcoded value to url when going live
+				document.getElementById('tpForm').action = url;
+                document.getElementById('tpForm').submit();
+                //document.getElementById('tpForm').src = document.getElementById('tpForm').src;
+                //document.getElementById('tpForm').contentWindow.location.reload();
+                // Hide no settings message
+                document.getElementById("noSettings").style.display = "none";
+                var loading = setTimeout(function () {
+                   document.getElementById('loading').style.display = "none";
+                   document.getElementById('settingBT').style.display = "none";
+                   document.getElementById('noSettings').style.display = "none";
+                }, 10000);
+            }
+        </script>
+    </div>
+    <div>
+    </div>
+</div>
