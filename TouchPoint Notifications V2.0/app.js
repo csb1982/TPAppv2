@@ -3,6 +3,36 @@ function onPushNotificationReceived(e) {
     alert(JSON.stringify(e));
 };
 
+function alertDismissed() {
+        // do something
+}
+
+// Formatted notifications //
+// Android notification
+var androidNotificationReceived = function (args) {
+    var str = JSON.stringify(args);
+    var obj = $.parseJSON(str);
+
+    navigator.notification.alert(
+        obj.payload.message, // message
+        alertDismissed, // callback
+        obj.payload.title, // title
+        'Done' // buttonName
+    );
+};
+
+// iOS notification
+var iOSNotificationReceived = function (args) {
+    var str = JSON.stringify(args);
+    var obj = $.parseJSON(str);
+
+    navigator.notification.alert(
+        obj.alert, // message
+        alertDismissed, // callback
+        'Done' // buttonName
+    );
+};
+
 (function () {
     var app = {
         data: {}
@@ -39,8 +69,8 @@ function onPushNotificationReceived(e) {
                     wp8: {
                         channelName: 'EverlivePushChannel'
                     },
-                    notificationCallbackIOS: onPushNotificationReceived,
-                    notificationCallbackAndroid: onPushNotificationReceived,
+                    notificationCallbackIOS: iOSNotificationReceived,
+                    notificationCallbackAndroid: androidNotificationReceived,
                     notificationCallbackWP8: onPushNotificationReceived
                 };
 

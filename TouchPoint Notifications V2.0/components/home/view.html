@@ -1,66 +1,12 @@
-<div data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
-    <div id="homeModel" class="form-view screen__content screen__content--form add-item-view">
-        <form>
-            <ul class="form-content" data-role="listview" data-style="inset">
-                <li class="form-content-item">
-
-
-                    <label id="usernameField" class="field field--text km-label-above">
-                        <span class="field__label">Username</span>
-
-
-                        <input id="username" data-bind="value: addFormData.username" placeholder="Type here ..." type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="passwordField" class="field field--password km-label-above">
-                        <span class="field__label">Password</span>
-
-
-                        <input id="password" data-bind="value: addFormData.password" placeholder="Type here ..." type="password">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="emailAddressField" class="field field--email km-label-above">
-                        <span class="field__label">Email address</span>
-
-
-                        <input id="emailAddress" data-bind="value: addFormData.emailAddress" placeholder="Type here ..." type="email">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="rememberMeField" class="field field--checkbox">
-                        <span class="field__label">Remember me</span>
-
-
-                        <input id="rememberMe" data-bind="checked: addFormData.rememberMe" type="checkbox">
-
-                    </label>
-                </li>
-            </ul>
-
-            <div class="button-group">
-                <a data-role="button" data-bind="events: { click: homeModel.cancel }">Cancel</a>
-                <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">Go for it!</a>
-            </div>
+<div data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow"
+    data-after-show="app.home.afterShow">
+    <div id="homeModel" class="form-view">
+        <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/qatesting331" target="iframeContainer">
+        <input id="userID" type="text" name="userID" value="qatesting331" /> <input id="site" type="text" name="siteID" value="qatesting331"
+            /> <input id="username" type="text" name="userName" value="pitest" /> <input id="password" type="text" name="password"
+                value="pitest" />
+            <div class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">Go for it!</a> </div>
         </form>
-        <!-- START_CUSTOM_CODE_homeModel -->
-        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-        <!-- END_CUSTOM_CODE_homeModel -->
+        <iframe name="iframeContainer" onload="this.width=screen.width;this.height=screen.height;" frameBorder="0"></iframe>        
     </div>
-
-    <!-- START_CUSTOM_CODE_home -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_home -->
 </div>
