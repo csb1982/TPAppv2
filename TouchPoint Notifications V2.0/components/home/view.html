@@ -1,50 +1,17 @@
-<div data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow"
+<div id="content" data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow"
     data-after-show="app.home.afterShow">
     <div id="homeModel" class="form-view">
         <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/qatesting331" target="iframeContainer" style="text-align: center;">
-        <input id="userID" type="hidden" name="userID" value="" />
-        <input id="site" type="hidden" name="siteID" value=""/>
-        Username:<br>
-        <input id="username" type="text" name="userName" value="pitest" />
-        <br>
-        Password:<br>
-        <input id="password" type="text" name="password" value="pitest" />
-        <br>
-
-        <div class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">Go for it!</a> </div>
-
+            <input id="userID" type="hidden" name="userID" value="" />
+            <input id="site" type="hidden" name="siteID" value=""/>
+            Username:<br>
+            <input id="username" type="text" name="userName" value="pitest" />
+            <br>
+            Password:<br>
+            <input id="password" type="text" name="password" value="pitest" />
+            <br>
+            <div class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">Go for it!</a> </div>
         </form>
-        <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0"></iframe>
-
-    </div>
-    <!--
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var h = $(window).height();
-            var w = $(window).width();
-            var x = "Total Width: " + screen.width;
-            // Check and change iframe depending on orientation
-            function doOnOrientationChange() {
-                switch (window.orientation) {
-                    case -90:
-                    alert(x);
-                    case 90:
-                        document.getElementById('tpFrame').height = (h) + "px";
-                        alert(x);
-                        break;
-                    default:
-                        document.getElementById('tpFrame').height = (h) + "px";
-                        alert(x);                            
-                        break;
-                }
-            }
-            window.addEventListener('orientationchange', doOnOrientationChange);
-            // Initial execution if needed
-            var x = "Total Width: " + screen.width;
-            alert(x);
-
-            doOnOrientationChange();
-        });
-    </script>
-    -->
+        <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="border: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0">Your browser doesn't support iFrames.</iframe>          
+    </div>      
 </div>
