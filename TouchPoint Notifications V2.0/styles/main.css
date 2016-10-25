@@ -12,7 +12,8 @@
 
 #kendoUiMobileApp .button-group,
 #kendoUiMobileApp .icon-group {
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
     display: table;
     border-collapse: separate;
     border-spacing: 1em;
@@ -163,7 +164,7 @@
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
     color: #fff;
-    background-color: #007aff;
+    background-color: #86c5da;
 }
 
 #kendoUiMobileApp.km-android .button-group .km-button.primary {
@@ -226,7 +227,7 @@ Fields
 /*Header flex box */
 
 #kendoUiMobileApp .km-header .km-navbar {
-    display: flex;
+    display: none;
 }
 
 #kendoUiMobileApp .km-header .km-rightitem,

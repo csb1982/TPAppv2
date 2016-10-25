@@ -4,15 +4,18 @@ app.home = kendo.observable({
     onShow: function () {
         // Show form
         $("#tpForm").show();
+        
      },
-    afterShow: function () { }
+    afterShow: function () {
+        
+     }
 });
 (function (parent) {
 
     // On orientation change re set iframe height
     $(window).on("orientationchange",function(){
-    var h = $(".km-content").height();
-    $("#tpFrame").height(h);
+        var h = $(".km-content").height();
+        $("#tpFrame").height(h);
     });
 
     var homeModel = kendo.observable({
