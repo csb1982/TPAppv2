@@ -4,6 +4,10 @@
     background: -webkit-linear-gradient(top,  #c81648 0%,#ab0534 100%);
     background: linear-gradient(to bottom,  #c81648 0%,#ab0534 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c81648', endColorstr='#ab0534',GradientType=0 );
+   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  font-family: "Segoe UI";
 }
 
 #tpForm {    
@@ -12,57 +16,136 @@
     position: fixed;
 }
 .inputFields {
-    background-color: #ab0534;
+    background-color: #8c0a2f;
     border-radius:20px;
-    border-color: #ab0534;
-    width: 70%;
-    height: 40px;
-    margin-left: 15%;
-    margin-top: -10px;
+    border-color: #8c0a2f;
+    width: 82%;
+    height: 47px;
+    margin-left: 8.7%;
+    margin-top: -15px;
     color: #e5e5e5;
-    padding-left: 10px;
+    padding-left: 20px;
+    border-style: none;
 }
 
 .inputHeaders {
-    padding-left: 15%;
-    color: #e5e5e5;   
+    padding-left: 8%;
+    color: #c98b9b;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight: 100;
+    margin-top:15px;
+   
+    
 }
 
 .km-flat .button-group .km-button.primary {
-    background-color: #86c5da;
-    border-radius:20px; 
-    border-color: #ab0534;
-    color: #e5e5e5;
-    width: 10%;
-    height: 40px;
+    background: transparent;
+    color: #edf6fa;
+    height: 49px;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight:100;
+    width:70%;
+  
+  
 }
 
 .logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px; 
-}
-
-#footerLink {     
-    text-align: center;
+   height:20%;
+   position: relative;
+    top: 5%;
+   
 }
 
 #contactLink {
-    text-align: center; 
+    text-align: center;
+    color: #bc969e;
+    text-decoration: none;
+    display: inline-block;
+   position: absolute;
+  bottom: 15px;
+    left: 0;
+    right: 0;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight:100;
+    
+}
+
+#contactLink span {
+
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight:100;
+    color:#f0e1e2;
+
+
+}
+
+#submitButton {
+    height:47px;
+    width: 82%;
+    margin-left: 8.7%;
+    background-color: #3dacce;
+    border-radius:20px; 
+    border-color: #3dacce;
+    margin-top: 12%;
+      
 }
 
 #contactPage {
     text-align: center;
 }
 
-#contactPage li {
-    list-style-type: none;
+#contactPage p {
+    color: #e5e5e5;
+    font-family: "Segoe UI";
+    font-size: 16px;
 }
+
 .backButton {
-    width: 80%;
-    border-radius:20px !important;
-    background-color: #86c5da !important; 
+    height:47px;
+    width: 82%;
+    margin-left:8.7%;
+     border-radius:20px; 
+    border-color: #3dacce;
+    background-color: #3dacce;
+   display: inline-block;
+   position: absolute;
+  bottom: 30px;
+    left: 0;
+    right: 0;
+ 
+}
+
+a.backButtonLink {
+
+    color: #e5e5e5 !important;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: 100;
+    text-decoration: none;
+    line-height: 47px;
+    padding-left:40%;
+    padding-right:40%;
+
+}
+
+.contact-info {
+    position: relative;
+    top: 25%;
+    transform: translateY(-25%); 
+    margin: 5%; 
+}
+
+
+.Middle-info {
+    position: relative;
+    top: 25%;
+    transform: translateY(-25%);  
 }
 

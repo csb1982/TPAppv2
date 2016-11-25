@@ -75,7 +75,7 @@ var iOSNotificationReceived = function (args) {
                 };
 
                 everlive.push.register(devicePushSettings, function () {
-                    alert("Successful registration in Telerik Platform. You are ready to receive push notifications.");
+                    //alert("Successful registration in Telerik Platform. You are ready to receive push notifications.");
                 }, function (err) {
                     alert("Error: " + err.message);
                 });

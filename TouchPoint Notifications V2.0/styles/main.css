@@ -12,11 +12,9 @@
 
 #kendoUiMobileApp .button-group,
 #kendoUiMobileApp .icon-group {
-    width: 80%;
-    margin-left: 10%;
-    display: table;
-    border-collapse: separate;
-    border-spacing: 1em;
+    display:table;
+    
+ 
 }
 
 #kendoUiMobileApp .button-group {
@@ -162,14 +160,14 @@
     width: 100%;
 }
 
-#kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
+#kendoUiMobileApp.km-ios7 .button-group .km-button.primary  {
     color: #fff;
-    background-color: #86c5da;
+  
 }
 
-#kendoUiMobileApp.km-android .button-group .km-button.primary {
+#kendoUiMobileApp.km-android .button-group .km-button.primary  {
     color: #fff;
-    background-color: #33b5e5;
+ 
 }
 
 #kendoUiMobileApp.km-widget .km-list .km-label-above textarea,
@@ -405,6 +403,7 @@ Fields
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
+   
 }
 
 #kendoUiMobileApp .multiple-select-modal-window .multiple-select-item-content {

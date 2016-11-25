@@ -1,27 +1,39 @@
 <div id="content" data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow"
     data-after-show="app.home.afterShow">
     <div id="homeModel" class="form-view">
-        <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/qatesting331" target="iframeContainer" >
-            <img class="logo" src="./images/napthensLogo.png"></img>
+        <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/notifications" target="iframeContainer" enctype="multipart/form-data">
+            <img class="logo" src="./images/napthenslogowhite.png"></img>
+
+            <div class="Middle-info">
             <input id="userID" type="hidden" name="userID" value="" />
             <input id="site" type="hidden" name="siteID" value=""/>
-            <p class="inputHeaders">Username:</p>
-            <input class="inputFields" id="username" type="text" name="userName" value="pitest" />
-            <p class="inputHeaders">Password:</p>  
-            <input class="inputFields" id="password" type="password" name="password" value="pitest" />
-            <div id="sumbitButton" class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">SIGN IN</a> </div>
-            <div id="footerLink">
-                <a id="contactLink" href="#contactPage">Don't have an account yet? Sign Up...</a> 
-            </div>             
+
+            <p class="inputHeaders">Username</p>
+            <input class="inputFields" id="username" type="text" name="userName" value="" />
+
+            <p class="inputHeaders">Password</p>  
+            <input class="inputFields" id="password" type="password" name="password" value="" />
+
+            <div id="submitButton" class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">SIGN IN</a> </div>
+            </div>
+
+
+            <a id="contactLink" data-role="footer" data-position="fixed" href="#contactPage">Don't have an account yet? <span>Sign Up...</span></a>            
         </form>
         <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="border: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0">Your browser doesn't support iFrames.</iframe>
-    </div>        
+    </div>
 </div>
 
 <!-- Contact information page-->
 <div data-role="view" id="contactPage">
-    <img class="logo" src="./images/napthensLogo.png"></img>
-    <p>To have access to TouchPoint please contact Napthens by</p>    
-    <p>Telephone: 0345 671 0278</p>
-    <a class="backButton" href="#content" data-role="button">Back</a>
+        <div id="homeModel" class="form-view">
+        <form id="tpForm" name="formvar" method="post"  target="iframeContainer" enctype="multipart/form-data">
+    <img class="logo" src="./images/napthenslogowhite.png"></img>
+    <div class="contact-info">
+    <p>To have access to TouchPoint Notifications please contact Napthes </p>
+    <p>on: 01234 567 890</p>
+    </div>
+    <div class="backButton"><a class="backButtonLink" href="#content" >BACK</a> </div>
+    </form>
+    </div>
 </div>
