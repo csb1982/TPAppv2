@@ -1,151 +1,130 @@
 .km-content {
-    background: #c81648;
-    background: -moz-linear-gradient(top,  #c81648 0%, #ab0534 100%);
-    background: -webkit-linear-gradient(top,  #c81648 0%,#ab0534 100%);
-    background: linear-gradient(to bottom,  #c81648 0%,#ab0534 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c81648', endColorstr='#ab0534',GradientType=0 );
-   -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  font-family: "Segoe UI";
+    background-image: url('../images/backgroundForPhone.jpg');
+    background-size: 100%;
 }
 
+/******************* Logo ***************/
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10%;
+    position: relative;
+    top: 5%;
+}
+
+.logoTitle {
+    text-align: center;
+    padding-top: 5%;
+    font-family: "Segoe UI";
+    font-size: 25px;
+    font-weight: 400;
+    color: #838c32;
+}
+
+.logoTitleLines {
+    margin-bottom: -25px;
+}
+
+/***************** Form *******************/
 #tpForm {    
     height:100vh;
     width: 100vw;
     position: fixed;
 }
 .inputFields {
-    background-color: #8c0a2f;
-    border-radius:20px;
-    border-color: #8c0a2f;
+    background: rgba(255,255,255,0.5);
     width: 82%;
     height: 47px;
     margin-left: 8.7%;
     margin-top: -15px;
-    color: #e5e5e5;
+    color: #972903;
     padding-left: 20px;
     border-style: none;
 }
 
 .inputHeaders {
     padding-left: 8%;
-    color: #c98b9b;
+    color: #ffffff;
     font-family: "Segoe UI";
     font-size: 20px;
     font-weight: 100;
     margin-top:15px;
-   
-    
+}
+
+.Middle-info {
+    position: relative;
+    top: 15%;
+    transform: translateY(-25%);
 }
 
 .km-flat .button-group .km-button.primary {
-    background: transparent;
-    color: #edf6fa;
-    height: 49px;
-    font-family: "Segoe UI";
-    font-size: 18px;
-    font-weight:100;
+    background-color: #972903;
+    height:47px;
     width:70%;
-  
-  
-}
-
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-   height:20%;
-   position: relative;
-    top: 5%;
-   
-}
-
-#contactLink {
-    text-align: center;
-    color: #bc969e;
-    text-decoration: none;
-    display: inline-block;
-   position: absolute;
-  bottom: 15px;
-    left: 0;
-    right: 0;
+    margin-left: 8.7%;
     font-family: "Segoe UI";
-    font-size: 14px;
-    font-weight:100;
-    
-}
-
-#contactLink span {
-
-    font-family: "Segoe UI";
-    font-size: 14px;
-    font-weight:100;
-    color:#f0e1e2;
-
-
+    background: rgba(151,41,3,0.5);
+    font-weight: 500;
+    font-size: 22px;
 }
 
 #submitButton {
-    height:47px;
     width: 82%;
+    height:47px;
     margin-left: 8.7%;
-    background-color: #3dacce;
-    border-radius:20px; 
-    border-color: #3dacce;
     margin-top: 12%;
-      
 }
 
+ /***************** Conatct Page*********************/
 #contactPage {
     text-align: center;
 }
 
-#contactPage p {
-    color: #e5e5e5;
+.contact-info {
+    position: relative;
+    top: 10%;
+    transform: translateY(-25%); 
+    margin: 5%; 
+    color: #ffffff;
     font-family: "Segoe UI";
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 100;
 }
 
-.backButton {
-    height:47px;
-    width: 82%;
-    margin-left:8.7%;
-     border-radius:20px; 
-    border-color: #3dacce;
-    background-color: #3dacce;
-   display: inline-block;
-   position: absolute;
-  bottom: 30px;
+#contactLink {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    bottom: 15px;
     left: 0;
     right: 0;
- 
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight:300;
+}
+
+#contactLink span {
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight:100;
+    color:#ffffff;
+}
+
+#backButton {
+    width: 82%;
+    height:47px;
+    margin-left: 8.7%;
+    margin-top: 12%;
+    position: absolute;
+    bottom: 20%;
 }
 
 a.backButtonLink {
-
-    color: #e5e5e5 !important;
-    font-family: "Segoe UI";
-    font-size: 18px;
-    font-weight: 100;
-    text-decoration: none;
-    line-height: 47px;
-    padding-left:40%;
-    padding-right:40%;
-
+    width: 82%;
+    height:47px;
+    margin-left: 8.7%;
+    margin-top: 25%;
 }
-
-.contact-info {
-    position: relative;
-    top: 25%;
-    transform: translateY(-25%); 
-    margin: 5%; 
-}
-
-
-.Middle-info {
-    position: relative;
-    top: 25%;
-    transform: translateY(-25%);  
-}
-

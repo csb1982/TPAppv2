@@ -16,7 +16,7 @@ var androidNotificationReceived = function (args) {
     navigator.notification.alert(
         obj.payload.message, // message
         alertDismissed, // callback
-        obj.payload.title, // title
+        'Notification', // title
         'Done' // buttonName
     );
 };
@@ -29,6 +29,7 @@ var iOSNotificationReceived = function (args) {
     navigator.notification.alert(
         obj.alert, // message
         alertDismissed, // callback
+        'Notification', // title
         'Done' // buttonName
     );
 };
@@ -64,7 +65,7 @@ var iOSNotificationReceived = function (args) {
                         alert: 'true'
                     },
                     android: {
-                        projectNumber: '488561349376'
+                        projectNumber: '488561349376',
                     },
                     wp8: {
                         channelName: 'EverlivePushChannel'

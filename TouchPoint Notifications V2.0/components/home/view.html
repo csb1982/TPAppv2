@@ -2,7 +2,12 @@
     data-after-show="app.home.afterShow">
     <div id="homeModel" class="form-view">
         <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/notifications" target="iframeContainer" enctype="multipart/form-data">
-            <img class="logo" src="./images/napthenslogowhite.png"></img>
+            <img class="logo" src="./images/cameleon-logo.png"></img>
+            <div class="logoTitle">
+                <p class="logoTitleLines">Chameleon</p>
+                <p>Solicitors</p>
+            </div>
+
 
             <div class="Middle-info">
             <input id="userID" type="hidden" name="userID" value="" />
@@ -14,11 +19,11 @@
             <p class="inputHeaders">Password</p>  
             <input class="inputFields" id="password" type="password" name="password" value="" />
 
-            <div id="submitButton" class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">SIGN IN</a> </div>
+            <div id="submitButton" class="button-group"> <a class="primary" data-role="button" data-bind="events: { click: homeModel.submit }">LOGIN</a> </div>
             </div>
 
 
-            <a id="contactLink" data-role="footer" data-position="fixed" href="#contactPage">Don't have an account yet? <span>Sign Up...</span></a>            
+            <a id="contactLink" data-role="footer" data-position="fixed" href="#contactPage">Don't have an account yet? <br/><span>Sign Up...</span></a>            
         </form>
         <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="border: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0">Your browser doesn't support iFrames.</iframe>
     </div>
@@ -28,12 +33,17 @@
 <div data-role="view" id="contactPage">
         <div id="homeModel" class="form-view">
         <form id="tpForm" name="formvar" method="post"  target="iframeContainer" enctype="multipart/form-data">
-    <img class="logo" src="./images/napthenslogowhite.png"></img>
-    <div class="contact-info">
-    <p>To have access to TouchPoint Notifications please contact Napthes </p>
-    <p>on: 01234 567 890</p>
+    <img class="logo" src="./images/cameleon-logo.png"></img>
+    <div class="logoTitle">
+        <p class="logoTitleLines">Chameleon</p>
+        <p>Solicitors</p>
     </div>
-    <div class="backButton"><a class="backButtonLink" href="#content" >BACK</a> </div>
+    <div class="contact-info">
+        <p>To have access to TouchPoint Notifications </p>
+        <p>please contact Eclipse Legal Systems on</p>
+        <p>01274 704100</p>
+    </div>
+    <div id="backButton" class="button-group"> <a class="primary" data-role="button" href="#content">BACK</a> </div>
     </form>
     </div>
 </div>
