@@ -128,3 +128,28 @@ a.backButtonLink {
     margin-left: 8.7%;
     margin-top: 25%;
 }
+
+#navBottom {
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+
+ }
+
+ #clearLink {
+    width: 90%;
+    margin-left: 5%;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight:100;
+    color:#ffffff;
+    border: 1px solid #ffffff;
+    height: 40px;
+ }
+
+#clearLink p {
+    margin-top: -5px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight:100;
+}

@@ -1,8 +1,37 @@
 'use strict';
 app.home = kendo.observable({
     onShow: function () {
+localStorage.clear();
+document.cookie = "username=John Doe";
+
+
+/*
+$.ajax({
+
+    url : 'https://demo.eclipsetouchpoint.co.uk/notifications',
+    type : 'POST',
+    data : {
+        'userId' : "b045897a33f58eb8",
+        'siteId' : "notifications",
+        'userName' : "craigtp",
+        'password' : "craigtp"
+    },
+    dataType:'json',
+    success : function(data) {              
+        alert('Data: '+data);
+    },
+    error : function(request,error)
+    {
+        alert("Request: "+JSON.stringify(request));
+    }
+});
+
+*/
+
+
         // Show form
         $("#tpForm").show();
+        $("#navBottom").hide();
 
         // Get local storage values if present
         var username = localStorage.getItem("username");
@@ -12,23 +41,33 @@ app.home = kendo.observable({
         $("#username").val(username);
         $("#password").val(password);
 
-        // This needs work ********************************
-        // Hardcoded values for form
-        //$("#userID").val("notifications");.
-        //$("#site").val("notifications");
+        if(username && password)
+        {
+            
+            // Hardcoded values for form
+            $("#userID").val(device.uuid);
+            $("#site").val("notifications");
 
-        //$("#userID").val("qatesting331");
-        //$("#site").val("qatesting331");
+            // Hide form
+            $("#tpForm").hide();
 
-        // Hide form
-        //$("#tpForm").hide();
+            var h = $(".km-content").height();
+            $("#tpFrame").height(h);
+            //Set iframe's height. So that it's full screen
+            /*
+            $("#navBottom").show();
+            var h = $(".km-content").height();
+            h = h - 50;
+            $("#tpFrame").height(h);
+            $("#tpFrame").show();
 
-        // Set iframe's height. So that it's full screen
-        //var h = $(".km-content").height();
-        //$("#tpFrame").height(h);
+            $(".km-content").css("background-color", "black");
+            $('.km-content').css('background-image', 'none');
+            */
 
-        // Submit form
-        //$("#tpForm").submit();
+            //Submit form
+            $("#tpForm").submit();            
+        }
      },
     afterShow: function () {
     }
@@ -51,16 +90,29 @@ app.home = kendo.observable({
         },
         submit: function () {
 
+            $("#navBottom").show();
+
             // Hardcoded values for form
             $("#userID").val(device.uuid);
             $("#site").val("notifications");
+            //$("#site").val("qatesting331");
 
             // Hide form
             $("#tpForm").hide();
 
-            // Set iframe's height. So that it's full screen
             var h = $(".km-content").height();
             $("#tpFrame").height(h);
+            // Set iframe's height. So that it's full screen
+            /*
+            var h = $(".km-content").height();
+            h = h - 50;
+            $("#tpFrame").height(h);
+
+            $("#tpFrame").show();
+            $(".km-content").css("background-color", "black");
+            $('.km-content').css('background-image', 'none');
+
+            */
 
             // Submit form
             $("#tpForm").submit();
@@ -72,21 +124,47 @@ app.home = kendo.observable({
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
 
-            // Giving option to user to save or remove saved login details
-            /*
-            var answer = confirm("Save Login details?");
-            if(answer)
-            {
-                localStorage.setItem("username", username);
-                localStorage.setItem("password", password);
-            }
-            else{
-                localStorage.removeItem("username");
-                localStorage.removeItem("password");
-            }
-            */
+            // test
+
+function myFunction() {
+    setTimeout(function(){
+
+         
+var x = document.cookie;
+alert(x);
+         }, 9000);
+}
+
+myFunction();
+
+
+
+/*
+function getCook(cookiename) 
+  {
+  // Get name followed by anything except a semicolon
+  var cookiestring=RegExp(""+cookiename+"[^;]+").exec(document.cookie);
+  // Return everything after the equal sign, or an empty string if the cookie name not found
+  return unescape(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
+  }
+
+var cookieValue = getCook('test');
+alert(cookieValue);
+*/
+
         },
-        cancel: function () { }
+        cancel: function () { },
+        clear: function () {
+            /*
+            localStorage.clear();
+            $("#tpForm").show();
+            $("#navBottom").hide();
+            
+            $("#tpFrame").hide();
+            $('.km-content').css('background-image', 'url("images/backgroundForPhone.jpg")');
+            */
+
+        }
     });
     parent.set('homeModel', homeModel);
 })(app.home);

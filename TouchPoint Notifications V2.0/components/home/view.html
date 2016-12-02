@@ -1,8 +1,9 @@
 <div id="content" data-role="view" data-title="Napthens Notifications" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow"
     data-after-show="app.home.afterShow">
     <div id="homeModel" class="form-view">
+        <!--<form id="tpForm" name="formvar" method="post" action="http://localhost:4550/qatesting331" target="iframeContainer" enctype="multipart/form-data">-->
         <form id="tpForm" name="formvar" method="post" action="https://demo.eclipsetouchpoint.co.uk/notifications" target="iframeContainer" enctype="multipart/form-data">
-            <img class="logo" src="./images/cameleon-logo.png"></img>
+            <img class="logo" src="./images/cameleon-logo.png" ></img>
             <div class="logoTitle">
                 <p class="logoTitleLines">Chameleon</p>
                 <p>Solicitors</p>
@@ -25,7 +26,15 @@
 
             <a id="contactLink" data-role="footer" data-position="fixed" href="#contactPage">Don't have an account yet? <br/><span>Sign Up...</span></a>            
         </form>
-        <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="border: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0">Your browser doesn't support iFrames.</iframe>
+        <div class="tpView">
+            <iframe id="tpFrame" name="iframeContainer" scrolling="yes" style="border: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;" frameBorder="0">Your browser doesn't support iFrames.</iframe>
+            <!--
+            <div id="navBottom">
+                <a id="clearLink" data-role="button" href="#content" data-bind="events: { click: homeModel.clear }"><p>BACK</p></a>
+            </div>
+            -->
+        </div>
+
     </div>
 </div>
 
